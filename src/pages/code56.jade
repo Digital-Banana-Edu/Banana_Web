@@ -1,0 +1,31 @@
+doctype html
+html
+    head
+        title Digital Banana и день кода
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        meta(name="google-site-verification" content="A8xv1M353T6Z4wN29JtemIWpEzuqTafga1F87qYW1cw")
+        link(rel="stylesheet" href="assets/css/main.css")
+        link(rel="shortcut icon" href="assets/img/favicon.png")
+
+        meta(property="og:title" content="Digital Banana не нашли такой страницы")
+        meta(property="og:description" content="Курсы, мероприятия, общение с профессионалами рынка. Мы делаем все возможное, чтобы дать каждому ученику первый опыт в профессии и помочь сделать осознанный выбор в будущем.")
+        meta(property="og:image" content="assets/img/share_img.png")
+        meta(property="og:type" content="website")
+        meta(property="og:url" content= "http://digital-banana.ru/err404")
+        meta(name="yandex-verification" content="e0a4b2c7ceaacc9f")
+        include partials/head-scripts.jade
+
+        body
+            section.section-error
+                .container
+                    .content
+                        .content-header
+                            h2 Это же час кода!
+                        .content-left.err404
+                            img(src="assets/img/roll.png")
+                        .content-right
+                            .about-title.err-title Переходите по ссылке и заполните небольшую анкету
+                            a.ui-btn.-primary(target="_blank" href="https://goo.gl/forms/NvtyVLp8r47LXmU92") Анкета
+
+            include partials/body-scripts.jade

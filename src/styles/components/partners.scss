@@ -1,0 +1,53 @@
+.partners {
+  width: 100%;
+  text-align: center;
+
+  @include bp(768) {
+    padding-left: 35%;
+    text-align: left;
+  }
+}
+
+.partner {
+  display: inline-block;
+  width: 50%;
+  margin-top: -50px;
+
+  @include bp(500) {
+    width: 200px;
+    margin: 0 20px;
+  }
+
+  @include bp(768) {
+    width: 150px;
+    margin: 0 10px 0 0;
+  }
+
+  @include bp(900) {
+    margin: 0 20px 0 0;
+  }
+
+  @include bp(1024) {
+    width: 200px;
+    margin: 0 40px 0 0;
+  }
+
+  &.research {
+    img {
+      margin-bottom: 40px;
+
+      @include bp(768) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  img {
+    width: 100%;
+    max-width: 250px;
+
+    @include bp(768) {
+      max-width: 300px;
+    }
+  }
+}

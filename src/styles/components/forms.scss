@@ -1,0 +1,419 @@
+.form-title {
+  margin-top: 20px;
+}
+
+.feedBackWrapper,
+.feedBackWrapperFree,
+.schedule {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  padding: 0 0 40px !important;
+  z-index: +100;
+  background-color: $yellow;
+  overflow: hidden;
+  transition: all 0.5s;
+  box-shadow: 0 0 20px #f1f1f1;
+  color: #383838;
+
+  .content {
+    padding: 0 30px;
+  }
+
+  h2 {
+    font-size: 3rem;
+    line-height: 3rem;
+    margin: 45px 0 30px;
+    text-transform: uppercase;
+  }
+
+  &.is-closed {
+    top: 0px;
+    display: none;
+  }
+}
+
+.feedBackWrapperFree {
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+
+  @include bp(768) {
+    width: 50%;
+  }
+
+  @include lp(400) {
+    top: 0;
+
+    h2 {
+      font-size: 2rem;
+      line-height: 2rem;
+    }
+
+    .form-title {
+      margin-top: 5px;
+    }
+  }
+
+  .content {
+    width: 100%;
+
+    .content-left {
+      width: 100%;
+    }
+  }
+}
+
+.course-name_placeholder,
+.input,
+.dropdown-toggle {
+  position: relative;
+  margin-top: 5px;
+  width: 100%;
+  height: 40px;
+  padding-right: 85px;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid black;
+  font-size: 18px;
+  line-height: 40px;
+  color: $text-color;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+input {
+  transition: all 0.01s;
+}
+
+input:focus {
+  outline: none;
+  border-width: 2px; 
+}
+
+input.hidden {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.dropdown {
+  position: relative;
+
+  &:after {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    width: 10px;
+    height: 10px;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    transform: rotate(45deg);
+    transition: all 0.5s;
+    z-index: +5;
+    content: "";
+  }
+
+  &.is-closed {
+    .dropdown-menu {
+      max-height: 0;
+    }
+  }
+
+  &.is-opened {
+    .dropdown-toggle:after {
+      transform: rotate(225deg);
+      top: 17px;
+    }
+
+    .dropdown-menu {
+      padding-top: 40px;
+      max-height: 500px;
+    }
+  }
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+  z-index: +2;
+}
+
+.dropdown-menu {
+  box-sizing: border-box;
+  position: absolute;
+  max-height: 200px;
+  overflow: hidden;
+  margin: -40px -10px 0 -10px;
+  width: 105%;
+  background-color: white;
+  z-index: +1;
+  transition: all 0.01s;
+  overflow-y: scroll; 
+
+  li {
+    width: 100%;
+    min-height: 40px;
+    padding: 10px 85px 10px 10px;
+    font-size: 18px;
+    line-height: 20px;
+    cursor: pointer;
+
+    &:hover {
+      font-weight: 900;
+    }
+  }
+}
+
+.form-exit,
+.form-exit-free,
+.schedule-exit {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+
+  &:after,
+  &:before {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    display: block;
+    content: "";
+    width: 25px;
+    height: 1px;
+    background-color: black;
+    transform: rotate(45deg);
+  }
+
+  &:after {
+    transform: rotate(-45deg);
+    top: 9px;
+  }
+}
+
+.age-picker {
+  margin-top: 13px;
+  width: 100%;
+
+  li {
+    display: inline-block;
+    margin: 0 16px 0 10px;
+    width: 42px;
+    height: 42px;
+    padding-top: 12px;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+
+    &.picked {
+      background-color: white;
+    }
+  }
+}
+
+#person-btn {
+  margin-top: 175px;
+  cursor: pointer;
+}
+
+.form.form-maillist {
+  background-color: $green;
+}
+
+.form-btn_course {
+  width: 160px; 
+}
+
+.ajaxgofree,
+.ajaxgo,
+.main-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.5rem;
+  border: 2px solid black;
+  display: inline-block;
+
+  @include bp(1024) {
+    &:hover {
+      background-color: $green;
+    }
+  }
+}
+
+::-webkit-input-placeholder {color:$yellow;}
+::-moz-placeholder {color:$yellow;}
+:-moz-placeholder {color:$yellow;}
+:-ms-input-placeholder {color:$yellow;}
+
+
+
+.hero-courses .form-btn {
+  display: none;
+}
+
+.successmsg {
+  position: fixed;
+  top: -300px;
+  left: 50%;
+  margin-left: -200px;
+  width: 400px;
+  height: auto;
+  padding: 30px 50px;
+  border: 8px solid $yellow;
+  background-color: white;
+  z-index: +99;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+
+  &.is-visible {
+    visibility: visible;
+    opacity: 1;
+    top: 150px;
+  }
+
+  img {
+    margin: 20px auto 0;
+    width: 120px;
+  }
+}
+
+.successmsg-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+
+
+@media screen and (min-width: 769px) {
+  .feedBackWrapper,
+  .schedule {
+    right: 0;
+  }
+
+  h4.form-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .feedBackWrapper,
+  .schedule {
+    overflow-y: scroll;
+    padding: 20px 10px 40px;
+    max-height: 80vh;
+  }
+  
+  .wrapper-left.wrapper-left_form,
+  .wrapper-right.wrapper-right_form {
+    width: 100%;
+  }
+
+  .schedule {
+    overflow-x: scroll;
+  }
+}
+
+.terms {
+  position: relative;
+  display: table-cell;
+  padding-top: 20px;
+  font-size: 14px;
+  vertical-align: middle;
+
+  .desc {
+    line-height: 20px;
+    display: block;
+  }
+
+  a {
+    display: block;
+    font-size: 12px;
+    text-decoration: underline;
+    opacity: .7;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+input[type="checkbox"].hidden {
+  display: none;
+}
+
+.checkbox {
+  position: absolute;
+  right: -30px;
+  top: 16px;
+  margin-left: 10px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid black;
+  margin-top: 3px;
+
+  &:before {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: black;
+    top: 4px;
+    left: 4px;
+    opacity: 0;
+  }
+
+  &.clicked:before {
+    opacity: 1;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .feedBackWrapper,
+  .schedule {
+    width: 100vh;
+    height: 100vh;
+    max-height: none;
+    left: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  .schedule {
+    padding: 10px;
+  }
+
+  .dropdown {
+    &.is-opened {
+      .dropdown-toggle {
+        background-color: white;
+      }
+
+      .dropdown-menu {
+        padding-top: 40px;
+        max-height: 300px;
+        overflow-y: scroll;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 602px) {
+  .schedule-exit {
+    position: fixed;
+  }
+
+  .terms {
+    max-width: 230px;
+  }
+}

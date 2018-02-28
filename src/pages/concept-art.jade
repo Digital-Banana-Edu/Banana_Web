@@ -1,0 +1,60 @@
+extends ./templates/course-layout.jade
+
+block title
+  title Концепт-арт в школе Digital Banana 14-16 лет
+
+block meta-content
+  meta(property="og:title" content="Курс концепт-арта Digital Banana для школьников 14-16 лет")
+  meta(property="og:image" content="assets/img/share_img.png")
+  meta(property="og:url" content= "http://digital-banana.ru/concept-art")
+  meta(name="yandex-verification" content="e0a4b2c7ceaacc9f")
+
+block form-dropdown
+  h4.form-title Курс
+  input.hidden(value="Концепт-арт" placeholder="Курс")
+  .course-name_placeholder Концепт-арт
+
+block form-age
+  ul.age-picker
+    li 13
+    li 14
+    li 15
+    li 16
+
+block teacher
+  .teacher-photo
+    img(src="assets/img/teacher-concept-art.jpg")
+  .about-title Даниил Иванов
+  .about-desc 
+    | Графический дизайнер и иллюстратор с опытом работы более пяти лет. Владеет программами: Adobe Photoshop, Adobe After Effects, Autodesk 3ds Max, ZBrush. Работы можно посмотреть на 
+    a(href="http://visall.ru/" target="_blank") персональном сайте
+
+block course
+  h1 Концепт Арт
+  h2 Photoshop / Illustrator
+  
+  .about-desc Сегодня ни одно серьезное произведение массовой культуры не обходится без заранее подготовленных художественных основ - концепт-арта. Художник визуализирует вымышленные миры, создает облик персонажей и окружения - все для того, чтобы вдохнуть жизнь в будущий проект. Концепт-арт специалисты высокого уровня нужны как в крупных компаниях, так и на небольших инди-проектах. Правда, для этого нужно сначала создать уверенное портфолио и много практиковаться с старшими товарищами.
+  .about-desc Для этого есть курс по цифровой живописи в Digital Banana, где студенты потренируются в создании различных изображений - предметов, персонажей, окружения, найдут свои сильные стороны, соберут первое профессиональное портфолио, а также поучаствуют в настоящих игровых проектах. 
+
+  a.ui-btn.-primary.-programm(href="/programs/concept-art.jpg" target="_blank") Скачать программу
+
+block price
+  .about-desc.-less-margin Стоимость в месяц
+  .about-title 6 500 рублей
+
+block details
+  .about-desc Умение пользоваться компьютером, базовые навыки работы с графическими редакторами будут преимуществом
+  .about-title 
+    | Возраст: 
+    span 14-16 лет
+  .about-title 
+    | Старт курса: 
+    span по набору группы
+  .about-title 
+    | Длительность: 
+    span 14 месяцев (2 года)
+  .about-title 
+    | Расписание:      
+    span.date ср
+    span.date сб
+    span 19:00 - 20:45 / 17:00 - 18:45

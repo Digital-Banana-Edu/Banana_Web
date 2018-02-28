@@ -1,0 +1,137 @@
+@import 'modules/reset';
+@import 'modules/tune';
+@import 'modules/icons';
+@import 'modules/mixins';
+@import 'sprite';
+
+@import 'fonts';
+@import 'variables';
+
+@import 'components/header';
+@import 'components/typography';
+@import 'components/socials';
+@import 'components/forms';
+@import 'components/containers';
+@import 'components/promo';
+@import 'components/filter-list';
+@import 'components/course-list';
+@import 'components/project-list';
+@import 'components/contacts';
+@import 'components/partners';
+@import 'components/course-page';
+@import 'components/gallery';
+@import 'components/slick';
+@import 'components/leto';
+@import 'components/about';
+@import 'components/ui';
+@import 'components/err404';
+@import 'components/article';
+@import 'components/blog';
+@import 'components/testimonials';
+
+#vk_community_messages {
+  right: 15px !important;
+}
+
+.main-logo {
+  @include icon(logo);
+  position: absolute;
+  top: 60px;
+  left: 32px;
+}
+
+.bananatag {
+  display: block;
+  position: fixed;
+  top: 82%;
+  left: -60px;
+  transform: rotate(90deg);
+  font-size: 21px;
+  font-weight: 600;
+  z-index: 999;
+
+  &:hover {
+    color: $yellow;
+  }
+}
+
+*,
+*:before {
+  transition: .2s;
+}
+
+.bottom-link {
+  position: relative;
+  display: block;
+  margin: 30px 0 0;
+  padding: 0 25px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+
+  &:hover {
+    &:before {
+      top: 4px;
+    }
+  }
+
+  &:before {
+    @include icon(left-arrow);
+    position: absolute;
+    transform: rotate(-90deg);
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main-logo,
+  .socials,
+  .bottom-link,
+  .bananatag{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 260px) {
+  .hero-main_about {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .socials {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 320px) {
+  .bottom-link {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+// .appear-block {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   bottom: 0;
+//   background-color: $yellow;
+//   z-index: 999;
+//   transition: .5s;
+//   width: 0;
+  
+//   &.-new {
+//     width: 100%;
+//   }
+// }
+
+.main-photo {
+  position: absolute;
+  top: -150px;
+  left: 0;
+  width: 90%;
+}

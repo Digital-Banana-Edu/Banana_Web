@@ -1,0 +1,43 @@
+.section-error {
+  display: block;
+
+  @include bp(768) {
+    display: flex;
+  }
+}
+
+.content-left.err404 {
+  img {
+    position: fixed;
+    bottom: -100px;
+    width: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @include bp(768) {
+      width: 350px;
+      bottom: -40px;
+      left: 20px;
+      transform: none;
+      animation: banana-flow 3.5s infinite;
+    }
+
+    @include bp(1024) {
+      left: 150px;
+    }
+  }
+}
+
+.err-title {
+  margin-bottom: 10px;
+
+  @include bp(768) {
+    margin-bottom: 20px;
+  }
+}
+
+@keyframes banana-flow {
+  0% {transform: translateY(0);}
+  50% {transform: translateY(-20px);}
+  100% {transform: translateY(0);}
+}

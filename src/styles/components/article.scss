@@ -1,0 +1,8 @@
+.bread-crumbs {
+  margin-bottom: 10px;
+  font-style: italic;
+
+  @include bp(768) {
+    margin-bottom: 20px;
+  }
+}

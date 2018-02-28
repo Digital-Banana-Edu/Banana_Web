@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="stylesheet" href="../assets/css/main.css")
+    link(rel="shortcut icon" href="assets/img/favicon.png")
+    block title
+    block meta-content
+    include ../partials/head-scripts.jade
+  body
+    include ../partials/header.jade
+
+    section.section-article
+      .container
+        block bread-crumbs
+        a.main-logo(href="/")
+        a.bananatag(target="_blank" href="https://www.instagram.com/digital_banana/").ga_bananatag #DIGITALBANANA
+        .socials
+          a.social__vk(target="_blank" href="https://vk.com/digital_banana").ga_vk vk
+          a.social__fb(target="_blank" href="https://www.facebook.com/digitalbananaschool/").ga_fb f
+          a.social__inst(target="_blank" href="https://www.instagram.com/digital_banana/").ga_ins ins
+
+        .content
+          .content-header
+            block article-title
+          .article
+            block article-content
+    include ../partials/body-scripts.jade

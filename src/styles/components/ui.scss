@@ -1,0 +1,151 @@
+.form-btn {
+  position: fixed;
+  top: 60px;
+  right: 0;
+  width: 140px;
+  height: 60px;
+  padding-left: 60px;
+  padding-top: 14px;
+  font-size: 14px;
+  background-color: $yellow;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  background-image: url("../img/ico-new.svg");
+  transition: all 0.5s;
+  z-index: 2;
+  // transform: translateX(100px);
+
+  &:hover {
+    background-color: $green;
+  }
+
+  &.form-btn__maillist {
+    transform: translateX(100px);
+    right: 60px;
+    background-color: $green;
+    background-image: url("../img/ico-mail.svg");
+    z-index: 1;
+
+    &:hover {
+      transform: translateX(0);
+    }
+  }
+}
+// =============================== Адаптивные настройки ========================================
+
+
+@media screen and (max-width: 560px) {
+  .btn {
+    width: 100%;
+  }
+
+  .hero-first .form-btn {
+    display: none;
+  }
+
+  .hero-courses .btn {
+    display: block;
+  }
+}
+
+// ========== NEW ==============
+
+.ui {
+  &-btn {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    background: linear-gradient($yellow 50%, $green 50%);
+    background-size: 200%;
+    background-position-y: 0;
+    text-align: center;
+    font-size: 0.9rem;
+    z-index: 10;
+    cursor: pointer;
+
+    @include bp(768) {
+      display: inline;
+      padding: 10px 20px;
+
+      &:hover {
+        background-position-y: 100%; 
+      }
+    }
+
+    &.-primary {
+      position: relative;
+      padding: 20px 0;
+      font-weight: 900;
+      background-color: $yellow;
+      font-size: 17px;
+
+      @include bp(768) {
+        display: block;
+      }
+
+      &.-programm {
+        display: block;
+        margin-bottom: 15px;
+        background-image: url("/assets/img/ico-save.png");
+        background-repeat: no-repeat;
+        background-size: 30px;
+        background-position: 15px 15px;
+
+        &:hover {
+          background-color: $green;
+          background-position-y: 15px; 
+        }
+      }
+      
+
+      &.-course {
+        display: block;
+        margin-bottom: 15px;
+        background-image: url("/assets/img/ico-new.svg");
+        background-repeat: no-repeat;
+        background-size: 60px;
+
+        &:hover {
+          background-color: $green;
+          background-position-y: 0; 
+        }
+      }
+
+      @include lp(500) {
+        font-size: 12px;
+
+        &.-programm {
+          background-size: 26px;
+        }
+      }
+    }
+  }
+
+  &-cta {
+    display: none;
+    position: fixed;
+    top: 60px;
+    right: -80px;
+    width: 140px;
+    height: 60px;
+    padding: 10px 0 0 70px;
+    background-color: $yellow;
+    background-image: url("/assets/img/ico-new.svg");
+    background-repeat: no-repeat;
+    background-size: 60px;
+    cursor: pointer;
+    line-height: 20px;
+    font-size: 14px;
+    font-weight: 900;
+    transition: .2s;
+    z-index: 10;
+
+    @include bp(768) {
+      display: block;
+
+      &:hover {
+        right: 0;
+      }
+    }
+  }
+}

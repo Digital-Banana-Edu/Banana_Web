@@ -1,0 +1,68 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    meta(name="google-site-verification" content="A8xv1M353T6Z4wN29JtemIWpEzuqTafga1F87qYW1cw")
+    link(rel="stylesheet" href="assets/css/main.css")
+    link(rel="shortcut icon" href="assets/img/favicon.png")
+    block title
+    block meta-content
+    include ../partials/head-scripts.jade
+  body
+    a.back-btn(href="/#courses")
+
+    #vk_community_messages
+    script(type="text/javascript").
+      VK.Widgets.CommunityMessages("vk_community_messages", 54916180, {expandTimeout: "30000",tooltipButtonText: "Ответим на любые вопросы"});
+    
+    .socials
+      a.social__vk(target="_blank" href="https://vk.com/digital_banana") vk
+      a.social__fb(target="_blank" href="https://www.facebook.com/digitalbananaschool/") f
+      a.social__inst(target="_blank" href="https://www.instagram.com/digital_banana/") ins
+
+    .successmsg
+      .successmsg-title Ваша заявка принята!
+      .successmsg-desc В ближайшее время мы свяжемся с вами!
+      img(src="assets/img/roll.png")
+
+    section.section-course
+      .container
+        include ../partials/form.jade
+
+        .content-about-course
+          .course-left.course-teacher-top
+            block teacher
+
+          .course-right
+            block course
+
+        .content-info-course
+          .course-left.course-price-top
+            block price
+
+            .ui-btn.-primary.-course.js-formBtn Оставить заявку
+            .about-desc Задать любой вопрос можно по телефону
+            a.about-title(href="tel:89650184751") 8 (965) 018-47-51
+            
+          .course-right
+            .about-title.-less-margin Уровень подготовки:
+            block details
+            script(type="text/javascript").
+              document.write(VK.Share.button(false,{type: "round", text: "Поделиться"})); 
+
+          .course-left.course-teacher-bottom
+            block teacher
+
+          .course-left.course-price-bottom
+            block price
+
+            .ui-btn.-primary.-course.js-formBtn Оставить заявку
+            .about-desc Задать любой вопрос можно по телефону
+            a.about-title(href="tel:89650184751") 8 (965) 018-47-51
+            script(type="text/javascript").
+              document.write(VK.Share.button(false,{type: "round", text: "Поделиться"})); 
+            
+
+    include ../partials/body-scripts.jade
+    

@@ -1,0 +1,56 @@
+extends ./templates/course-layout.jade
+
+block title
+  title Машинное обучение в школе Digital Banana 14-16 лет
+
+block meta-content
+  meta(property="og:title" content="Курс Машинное обучение Digital Banana для школьников 14-16 лет")
+  meta(property="og:image" content="assets/img/share_img.png")
+  meta(property="og:url" content= "http://digital-banana.ru/data-science")
+  meta(name="yandex-verification" content="e0a4b2c7ceaacc9f")
+
+block form-dropdown
+  h4.form-title Курс
+  input.hidden(value="Машинное обучение" placeholder="Курс")
+  .course-name_placeholder Машинное обучение
+
+block form-age
+  ul.age-picker
+    li 13*
+    li 14
+    li 15
+    li 16
+
+block teacher
+  .teacher-photo
+    img(src="assets/img/teacher-data-science-1.jpg")
+  .about-title Дарья Сердюк
+  .about-desc Лингвист-разработчик, бакалавр прикладной математики и информатики, студентка магистратуры "Анализ больших данных в бизнесе, экономике и обществе" НИУ ВШЭ Санкт-Петербург.
+
+block course
+  h1 Машинное обучение
+  h2 Математика / Чат-боты / Нейронные сети
+  
+  .about-desc На курсе ребята познакомятся основными концепциями, необходимыми для создания своей собственной обучаемой нейронной сети, поработают с библиотеками обработки изображений и видео, запустят чат-ботов, умеющих общаться с человеком и сделают свой большой выпускной проект. 
+
+  a.ui-btn.-primary.-programm(href="/programs/data-science.jpg" target="_blank") Скачать программу
+
+block price
+  .about-desc.-less-margin Стоимость в месяц
+  .about-title 6 500 рублей
+
+block details
+  .about-desc Сильная математика, базовые знания по программированию. Конкурсный отбор
+  .about-title 
+    | Возраст: 
+    span 14-16 лет
+  .about-title 
+    | Старт курса: 
+    span 29 октября
+  .about-title 
+    | Длительность: 
+    span 14 месяцев (2 года)
+  .about-title 
+    | Расписание:      
+    span.date вс
+    span 12:00 - 15:45

@@ -1,0 +1,36 @@
+$sprite: (
+	burger: (
+		offset-x: -474px,
+		offset-y: -607px,
+		width: 20px,
+		height: 16px,
+	),
+	left-arrow: (
+		offset-x: -500px,
+		offset-y: -607px,
+		width: 17px,
+		height: 14px,
+	),
+	logo: (
+		offset-x: 0px,
+		offset-y: -656px,
+		width: 82px,
+		height: 104px,
+	),
+	main_banana: (
+		offset-x: -474px,
+		offset-y: 0px,
+		width: 318px,
+		height: 601px,
+	),
+	newyear-tree: (
+		offset-x: 0px,
+		offset-y: 0px,
+		width: 468px,
+		height: 650px,
+	),
+);
+
+$spritesheet-width: 792px;
+$spritesheet-height: 760px;
+$spritesheet-image: "sprite.png";

@@ -1,0 +1,60 @@
+.leto-video {
+  width: 100%;
+  min-height: 230px;
+}
+
+.reason-list {
+  li {
+    position: relative;
+    margin-bottom: 5px;
+    padding: 0 10px 0 20px;
+    font-size: 15px;
+    line-height: 17px;
+
+    &:before {
+      position: absolute;
+      display: block;
+      content: "";
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: $green;
+      top: 5px;
+      left: 0;
+    }
+  }
+}
+
+.schedule {
+  padding: 50px 0;
+
+}
+
+.schedule.content {
+  width: 80%;
+}
+
+.schedule td,
+.schedule th {
+  border: 2px solid black;
+  padding: 10px;
+  vertical-align: middle;
+}
+
+.schedule.container td {
+       
+      padding: 5px 10px;
+  }
+
+
+@media screen and (max-width: 768px) {
+  .schedule {
+    padding: 50px 10px;
+  }
+}
+
+@media screen and(max-width: 1440px) {
+  .schedule table {
+    font-size: 15px;
+  }
+}

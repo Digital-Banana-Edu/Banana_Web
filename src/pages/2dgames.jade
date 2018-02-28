@@ -1,0 +1,56 @@
+extends ./templates/course-layout.jade
+
+block title
+  title Создание 2D игр в школе Digital Banana 12-13 лет
+
+block meta-content
+  meta(property="og:title" content="Создание 2D игр в школе Digital Banana 12-13 лет")
+  meta(property="og:image" content="assets/img/share_img.png")
+  meta(property="og:url" content= "http://digital-banana.ru/2dgames")
+  meta(name="yandex-verification" content="e0a4b2c7ceaacc9f")
+
+block form-dropdown
+  h4.form-title Курс
+  input.hidden(value="Construct" placeholder="Курс")
+  .course-name_placeholder Создание 2D игр
+
+block form-age
+  ul.age-picker
+    li 11
+    li 12
+    li 13
+
+block teacher
+  .teacher-photo
+    img(src="assets/img/teacher-2d-games-2.jpg")
+  .about-title Никита Сорокин
+  .about-desc Indie-разработчик/ куратор Digital Banana.
+
+block course
+  h1 Создание 2D игр
+  h2 Сonstruct 2
+  
+  .about-desc За последние 10 лет игровая индустрия стала одной из самых быстрорастущих IT-сфер, и каждый хороший геймдизайнер — на вес золота. Крупные компании готовы бороться за высококлассных специалистов, и задача начинающего разработчика - набраться опыта в создании небольших проектов для дальнейшего трудоустройства. 
+  .about-desc Курс по созданию 2D-игр в Digital Banana идеально подходит для решения этой задачи. Низкий порог сложности, многообразие обучающих программ, небольшой период разработки — под руководством опытных преподавателей студенты смогут максимально быстро развить в себе навыки геймдизайна. В процессе годового курса учащиеся освоят игровой редактор Construct2, научаться основным принципам геймдизайна и по итогу обучения создадут свою первую полноценную 2D игру. 
+
+  //- a.ui-btn.-primary.-programm(href="/programs/2d-games.pdf" target="_blank") Скачать программу
+
+block price
+  .about-desc.-less-margin Стоимость в месяц
+  .about-title 6 000 рублей
+
+block details
+  .about-desc Умение пользоваться компьютером
+  .about-title 
+    | Возраст: 
+    span 11-13 лет
+  .about-title 
+    | Старт курса: 
+    span 29 октября
+  .about-title 
+    | Длительность: 
+    span 3 месяца
+  .about-title 
+    | Расписание:      
+    span.date вс
+    span 14:00 - 17:00

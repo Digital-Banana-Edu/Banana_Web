@@ -1,0 +1,190 @@
+.back-btn {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-color: $yellow;
+  z-index: 999;
+  transition: .5s;
+
+  &:before {
+    @include icon(left-arrow);
+    position: absolute;
+    left: 15px;
+    top: 13px;
+    transition: .5s;
+  }
+
+  @include bp(768) {
+    bottom: 0;
+    width: 40px;
+    height: 100vh;
+    cursor: pointer;
+
+    &:before {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &:hover {
+      width: 60px;
+
+      &:before {
+        left: 8px;
+      }
+    }
+  }
+}
+
+.content {
+  &-about-course {
+    @include clearfix;
+    padding-bottom: 20px;
+
+    h1 {
+      font-size: 30px;
+      line-height: 30px;
+
+      @include bp(768) {
+        font-size: 50px;
+        line-height: 50px;
+      }
+    }
+
+    h2 {
+      font-size: 25px;
+      line-height: 25px;
+      font-weight: 400;
+
+      @include bp(768) {
+        font-size: 45px;
+        line-height: 45px;
+      }
+    }
+  }
+
+  &-info-course {
+    @include clearfix;
+    
+    .course-left,
+    .course-right {
+      border-top: 1px solid black;
+      padding-top: 10px;
+    }
+  }
+}
+
+.course {
+  &-left,
+  &-right {
+    float: left;
+    display: table-cell;
+    vertical-align: top;
+  }
+
+  &-left {
+    @include bp(769) {
+      margin-right: 5%;
+      width: 30%;
+    }
+  }
+
+  &-right {
+    position: relative;
+
+    @include bp(769) {
+      width: 65%;
+    }
+
+    table {
+      @include lp(768) {
+        display: none;
+      }
+
+      @include bp(768) {
+        margin: 10px 0 20px;
+        display: block;
+      }
+    }
+  }
+
+  &-teacher-top,
+  &-price-top {
+    @include lp(769) {
+      display: none;
+    }
+  }
+
+  &-teacher-bottom,
+  &-price-bottom {
+    @include bp(768) {
+      display: table-cell;
+      vertical-align: top;
+      width: 45%;
+    }
+
+    @include bp(769) {
+      display: none;
+    }
+  }
+
+  &-teacher-bottom {
+    @include bp(768) {
+      margin-right: 10%;
+    }
+  }
+}
+
+.teacher-photo {
+  width: calc(100% + 20px);
+  margin: 0 0 10px -10px;
+
+  img {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: url(desaturate.svg#greyscale);
+    filter: gray;
+    -webkit-filter: grayscale(1);
+  }
+
+  @include bp(768) {
+    width: 100%;
+    margin: 0 0 10px;
+  }
+}
+
+.about-title {
+  span.date {
+    margin: 0 5px;
+    padding: 8px;
+    background-color: #f9f9f9;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: 400;
+  }
+
+  + script + table {
+    margin-top: 10px;
+  }
+}
+
+.about-desc {
+  &.-less-margin {
+    margin-bottom: 5px;
+  }
+}
+
+.section-course {
+  padding-top: 25px !important;
+
+  @include lp(520) {
+    .container {
+      padding: 40px 10px;
+    }
+  }
+}

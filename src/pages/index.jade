@@ -1,0 +1,179 @@
+doctype html
+html
+  head
+    title Digital Banana - цифровые технологии для школьников средних и старших классов
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    meta(name="google-site-verification" content="A8xv1M353T6Z4wN29JtemIWpEzuqTafga1F87qYW1cw")
+    link(rel="stylesheet" href="assets/css/main.css")
+    link(rel="shortcut icon" href="assets/img/favicon.png")
+
+    meta(property="og:title" content="Digital Banana - цифровые технологии для школьников средних и старших классов")
+    meta(property="og:description" content="Курсы, мероприятия, общение с профессионалами рынка. Мы делаем все возможное, чтобы дать каждому ученику первый опыт в профессии и помочь сделать осознанный выбор в будущем.")
+    meta(property="og:image" content="assets/img/share_img.png")
+    meta(property="og:type" content="website")
+    meta(property="og:url" content= "http://digital-banana.ru/")
+    meta(name="yandex-verification" content="e0a4b2c7ceaacc9f")
+
+    include partials/head-scripts.jade
+  body
+    include partials/header.jade
+    #vk_community_messages
+    script(type="text/javascript").
+      VK.Widgets.CommunityMessages("vk_community_messages", 54916180, {expandTimeout: "30000",tooltipButtonText: "Ответим на любые вопросы"});
+    .hero.hero-first
+      .container
+        .main-logo
+        a.bananatag(target="_blank" href="https://www.instagram.com/digital_banana/").ga_bananatag #DIGITALBANANA
+        .socials
+          a.social__vk(target="_blank" href="https://vk.com/digital_banana").ga_vk vk
+          a.social__fb(target="_blank" href="https://www.facebook.com/digitalbananaschool/").ga_fb f
+          a.social__inst(target="_blank" href="https://www.instagram.com/digital_banana/").ga_ins ins
+        .feedBackWrapperFree.form-person.is-closed.container
+          .form-exit-free
+          .content
+            .wrapper-right.wrapper-right_form
+              h2
+                | Бесплатный
+                br
+                | урок
+              
+            .wrapper-right.wrapper-right_form
+              h4.form-title Ваш телефон
+              input.isrequired.input(type="text" placeholder="phone")
+              h4.form-title Ваша почта
+              input.isrequired.input(type="text" placeholder="mail")
+              h4.form-title Ваше имя
+              input.isrequired.input(type="text" placeholder="parentName")
+              .terms
+                .desc Я соглашаюсь на обработку моих персональных данных
+                  .checkbox
+                input.isrequired.hidden.check(type="checkbox")
+                br
+                a(href="/license.pdf" target="_blank") Политика конфеденциальности Digital Banana
+              .ajaxgofree Отправить форму
+
+        .feedBackWrapper.form-person.is-closed.container
+          .form-exit
+          .content
+            .wrapper-left.wrapper-left_form
+            .wrapper-right.wrapper-right_form
+              h2
+                | Заявка
+                br
+                | на курс
+            .wrapper-left.wrapper-left_form
+              h4.form-title Телефон для связи
+              input.isrequired.input(type="text" placeholder="phone")
+              h4.form-title Контактная почта
+              input.isrequired.input(type="text" placeholder="mail")
+              h4.form-title Возраст ребенка
+              input.isrequired.hidden.age-input.isrequired(type="text" placeholder="age")
+              ul.age-picker
+                li 10
+                li 11
+                li 12
+                li 13
+                li 14
+                li 15
+                li 16
+                li 17
+
+            .wrapper-right.wrapper-right_form
+              h4.form-title Выберите курс
+              .dropdown.is-closed
+                input.isrequired.dropdown-input.hidden(type="text" placeholder="курс вашей мечты")
+                .dropdown-toggle
+                ul.dropdown-menu.is-hidden
+                  li Разработка сайтов
+                  li Мобильная разработка
+                  li Машинное обучение
+                  li Игровая разработка
+                  li Дизайн игровых уровней
+                  li Концепт-арт
+                  li Основы программирования
+                  li Компьютерная математика
+                  li Создание 2D игр
+              h4.form-title Фио ребенка
+              input.isrequired.input.input__parent(type="text" placeholder="kidName")
+              h4.form-title Фио родителя
+              input.isrequired.input(type="text" placeholder="parentName")
+              .terms
+                .desc Я соглашаюсь на обработку моих персональных данных
+                  .checkbox
+                input.isrequired.hidden.check(type="checkbox")
+                br
+                a(href="/license.pdf" target="_blank") Политика конфеденциальности Digital Banana
+              .ajaxgo Отправить форму
+              
+
+        //- a.form-btn.form-btn__maillist(target="_blank" href="http://eepurl.com/b2Jj35").ga_subscribe
+        //-   | подписаться
+        //-   br
+        //-   | на рассылку
+
+        .successmsg
+          .successmsg-title Ваша заявка принята!
+          .successmsg-desc В ближайшее время мы свяжемся с вами!
+          img(src="./assets/img/roll.png")
+
+        .content
+          .content-header.banana-keeper
+            h1
+              | Digital
+              br
+              | Banana
+          //- .wrapper-left.about-slider-container
+          //-   .about-photos
+          //-     .about-photo
+          //-       img(src="https://pp.userapi.com/c630226/v630226295/45498/NUlsI308Dp4.jpg")
+          //-     .about-photo
+          //-       img(src="https://pp.userapi.com/c638620/v638620295/36ea0/UfxQwoEJuUs.jpg")
+          //-     .about-photo
+          //-       img(src="https://pp.userapi.com/c836131/v836131295/bf0c/YmyWFD47SEI.jpg")
+          //-     .about-photo
+          //-       img(src="https://pp.userapi.com/c638620/v638620295/36dd8/a3ES6qjyC3E.jpg")
+
+          //-   .about-photos-nav
+          //-     .about-photo-nav
+          //-       img(src="https://pp.userapi.com/c630226/v630226295/45498/NUlsI308Dp4.jpg")
+          //-     .about-photo-nav
+          //-       img(src="https://pp.userapi.com/c638620/v638620295/36ea0/UfxQwoEJuUs.jpg")
+          //-     .about-photo-nav
+          //-       img(src="https://pp.userapi.com/c836131/v836131295/bf0c/YmyWFD47SEI.jpg")
+          //-     .about-photo-nav
+          //-       img(src="https://pp.userapi.com/c638620/v638620295/36dd8/a3ES6qjyC3E.jpg")
+          .content-left
+          .content-right
+            h3.hero-main_about
+              | Курсы и мероприятия по 
+              a.hero-main_about_link_it(href="#courses") IT
+              |  и 
+              a.hero-main_about_link_gamedev(href="#courses") Gamedev
+              |  для школьников 10-17 лет
+              //- a.hero-main_about_link_small(href="#courses") кружки
+              //- |  для 10-13 лет, 
+              //- a(href="http://digitaljungle.ru/" target="_blank") мероприятия
+              //- | ,
+              //- br
+              //- a(href="https://newtonew.com/tech/digital-banana-hackathon" target="_blank") хакатоны
+              //- |  и 
+              //- a(href="/leto" target="_blank") Летняя ИТ-программа
+              | . Тут находят друзей, создают команды и запускают первые IT-проекты
+
+            a.main-btn.js-freeBtn Записаться на бесплатный урок
+            a.main-btn(href="/events" target="_blank") Расписание ближайших занятий
+
+
+
+          a(href="#courses").bottom-link Узнайте больше
+    
+    include partials/courses.jade
+    include partials/about.jade
+    
+    //- include partials/testimonials.jade
+    include partials/projects.jade
+    include partials/partners.jade
+    include partials/contacts.jade
+
+    include partials/body-scripts.jade  

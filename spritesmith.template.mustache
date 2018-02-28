@@ -1,0 +1,14 @@
+$sprite: (
+	{{#items}}
+	{{name}}: (
+		offset-x: {{px.offset_x}},
+		offset-y: {{px.offset_y}},
+		width: {{px.width}},
+		height: {{px.height}},
+	),
+	{{/items}}
+);
+
+$spritesheet-width: {{{ spritesheet.px.width }}};
+$spritesheet-height: {{{ spritesheet.px.height }}};
+$spritesheet-image: "{{{ spritesheet.escaped_image }}}";

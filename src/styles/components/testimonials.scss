@@ -1,0 +1,50 @@
+.testimonials {
+  width: 100%;
+
+  .testimonial {
+    padding: 10px 0;
+
+    &-header {
+      margin-bottom: 20px;
+      padding: 0 0 10px;
+    }
+
+    &-title {
+      margin-bottom: 10px;
+      font-weight: 900;
+      font-size: 20px;
+    }
+
+    &-who {
+      margin-bottom: 5px;
+      font-size: 15px;
+
+      span {
+        font-weight: 900;
+      }
+    }
+
+    &-content {
+      background-color: $yellow;
+      padding: 10px 15px;
+      position: relative;
+
+      &:before {
+        @include triangle(b, $yellow, 18px, 17px);
+        position: absolute;
+        display: block;
+        content: "";
+        top: -33px;
+        left: 40px;
+      }
+    }
+  }
+}
+
+.slick-dots .button {
+  content: "";
+  color: transparent;
+  background-color: $yellow;
+  display: inline-block;
+  border-radius: 50%;
+}

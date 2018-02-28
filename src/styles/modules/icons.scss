@@ -1,0 +1,93 @@
+@mixin sprite-size($image, $retina: false) {
+	@if $retina {
+		background-size: ($spritesheet-width / 2) ($spritesheet-height / 2);
+	} @else {
+		background-size: $spritesheet-width $spritesheet-height;
+	}
+}
+
+@mixin sprite-width($image, $retina: false) {
+	$width: map-get(map-get($sprite, $image), 'width');
+
+	@if $retina {
+		width: $width / 2;
+	} @else {
+		width: $width;
+	}
+}
+
+@function sprite-width($image) {
+	$width: map-get(map-get($sprite, $image), 'width');
+
+	@return $width;
+}
+
+@mixin sprite-height($image, $retina: false) {
+	$height: map-get(map-get($sprite, $image), 'height');
+
+	@if $retina {
+		height: $height / 2;
+	} @else {
+		height: $height;
+	}
+}
+
+@mixin sprite-position($image, $retina: false) {
+	$offset-x: map-get(map-get($sprite, $image), 'offset-x');
+	$offset-y: map-get(map-get($sprite, $image), 'offset-y');
+
+	@if $retina {
+		background-position: ($offset-x / 2) ($offset-y / 2);
+	} @else {
+		background-position: $offset-x $offset-y;
+	}
+}
+
+@mixin sprite-image($image) {
+	background-image: url($spritesheet-image);
+}
+
+@mixin sprite($image, $size: true) {
+	@include sprite-image($image);
+	@include sprite-position($image);
+	background-repeat: no-repeat;
+
+	@if $size {
+		@include sprite-width($image);
+		@include sprite-height($image);
+	}
+}
+
+@mixin retina-sprite($image) {
+	@media
+		only screen and (-webkit-min-device-pixel-ratio: 2),
+		only screen and (   min--moz-device-pixel-ratio: 2),
+		only screen and (     -o-min-device-pixel-ratio: 2/1),
+		only screen and (        min-device-pixel-ratio: 2),
+		only screen and (                min-resolution: 192dpi),
+		only screen and (                min-resolution: 2dppx) {
+
+		$image: $image + '2x';
+		@include sprite-size($image, true);
+		@include sprite-position($image, true);
+
+	}
+}
+
+@mixin icon($icon, $arg1: 'ib', $arg2: '') {
+	content: '';
+
+  @if $arg1 == 'b' {
+    display: block;
+  }
+
+  @if $arg1 != 'b' {
+    display: inline-block;
+  }
+
+  @include sprite($icon);
+
+	@if $arg2 == 'retina' {
+		@include retina-sprite($icon);
+	}
+}

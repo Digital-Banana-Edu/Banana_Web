@@ -1,0 +1,239 @@
+body {
+  font-family: "Ubuntu";
+  color: $text-color;
+  box-sizing: border-box;
+}
+
+.banana-keeper {
+  position: relative;
+}
+
+.hero-first .banana-keeper:before {
+  @include icon(main_banana);
+  position: absolute;
+  top: -60%;
+  z-index: -1;
+}
+
+.content,
+.container {
+  margin: 0 auto;
+}
+
+.hero {
+  min-height: 100vh;
+}
+
+.hero-first {
+  padding: 40px 0 0;
+}
+
+.hero-course {
+  padding-bottom: 20px;
+}
+
+.wrapper-left,
+.wrapper-right {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.wrapper-left {
+  &.partners {
+    padding-top: 154px;
+  }
+}
+
+#projects,
+#contacts {
+  display: flexbox;
+  align-items: center;
+}
+
+// =============================== Адаптивные настройки ========================================
+
+
+@media screen and (min-width: 769px) {
+  .hero-first,
+  .hero-course,
+  .hero-newyear,
+  #contacts,
+  #partners {
+    align-items: center;
+    display: flex;
+  }
+
+  .container {
+    width: 95%;
+    // width: 83.333333%;
+  }
+
+  .content {
+    width: 85%;
+  }
+
+  .wrapper-left {
+    width: 35%;
+    margin: 0 10% 0 0;
+  }
+
+  .wrapper-right {
+    width: 55%;
+  }
+
+  .hero-coueses h2 {
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hero-first {
+    align-items: center;
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container,
+  .wrapper-left,
+  .wrapper-right {
+    width: 100%;
+  }
+
+  .hero {
+    padding: 0 10px;
+  }
+
+  .hero-first {
+    padding-top: 60px;
+  }
+
+  #projects {
+    padding-top: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero-first .banana-keeper:before  {
+    top: 10%;
+    right: 0;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .hero-first .banana-keeper:before  {
+    left: 27%;
+    top: -60%;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  #projects {
+    background-color: #f9f9f9;
+  }
+
+  .hero-first .banana-keeper:before  {
+    top: 0;
+  }
+
+  .hero-course {
+    min-height: none;
+  }
+}
+
+@media screen and (max-width: 325px) {
+  .hero-first {
+    background-position-x: 180%;
+  }
+}
+
+
+//  NEW BANANA STYLES
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 10px;
+
+  @include bp(768) {
+    width: 80%;
+    padding: 0;
+  }
+}
+
+section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+
+  &:not(.section-main) {
+    padding: 50px 0 0;
+  }
+
+  @include bp(1024) {
+    min-height: 100vh;
+  }
+}
+
+.section-courses {
+  @include lp(520) {
+    padding-bottom: 20px !important;
+  }
+}
+
+.section-contacts {
+  padding-bottom: 50px !important;
+
+  @include bp(768) {
+    padding-bottom: 105px !important;
+  }
+}
+
+.content {
+  width: 100%;
+
+  &-header {
+    h2 {
+      margin-bottom: 35px;
+    }
+
+    h3 {
+      font-size: 16px;
+      line-height: 19px;
+
+      a {
+        font-weight: 900;
+      }
+    }
+
+    @include bp(768) {
+      padding-left: 45%;
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+
+  &-left,
+  &-right{
+    position: relative;
+
+    @include bp(768) {
+      display: inline-table;
+      vertical-align: top;
+      width: 45%;
+    }
+  }
+
+  &-right {
+    @include bp(768) {
+      width: 55%;
+    }
+  }
+}
+
+#courses .ui-btn {
+  @include bp(560) {
+    display: none;
+  }
+}

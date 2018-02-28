@@ -1,0 +1,278 @@
+.hero-courses h2 {
+  margin-bottom: 30px;
+}
+
+.course-list {
+  display: none;
+
+  &.is-active {
+    display: block;
+  }
+
+  > li {
+    position: relative;
+    padding: 10px 0;
+    outline: 1px;
+    cursor: pointer;
+    color: #565656;
+
+    @include bp(640) {
+      display: inline-block;
+      margin-right: 20px;
+      width: calc(50% - 10px);
+
+      &:nth-child(even) {
+        margin-right: 0;
+      }
+    }
+
+    @include bp(768) {
+      display: block;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+
+      &:first-child {
+        border-top: 1px solid black;
+      }
+    } 
+  }
+}
+
+.course {
+  display: table;
+  min-height: 125px;
+  padding: 10px;
+  background-color: $yellow;
+
+  @include bp(768) {
+    background-color: transparent;
+    padding: 15px 0;
+    border-bottom: 1px solid black;
+  }
+
+  @include bp(1024) {
+    min-width: 100%;
+    padding: 20px 0;
+  }
+
+  &-info {
+    position: relative;
+    display: table-cell;
+    width: 70%;
+
+    @include bp(1024) {
+      width: calc(100% - 136px);
+    }
+
+    &.-high-block {
+      @include lp(500) {
+        padding-bottom: 40px;
+      }
+    }
+
+    &-title {
+      font-size: 16px;
+      font-weight: 900;
+      margin-bottom: 5px;
+
+      @include bp(450) {
+        font-size: 20px;
+      }
+
+      @include bp(640) {
+        font-size: 17px;
+      }
+
+      @include bp(1024) {
+        font-size: 22px;
+      }
+    }
+
+    &-desc {
+      font-size: 13px;
+
+      @include bp(450) {
+        font-size: 15px;
+      }
+
+      @include bp(640) {
+        font-size: 13px;
+      }
+
+      @include bp(1024) {
+        max-width: 300px;
+        font-size: 17px;
+      }
+    }
+
+    &-time {
+      position: absolute;
+      bottom: 0;
+      font-size: 12px;
+      line-height: 15px;
+
+      span {
+        font-weight: 900;
+      }
+
+      @include bp(450) {
+        font-size: 14px;
+      }
+
+      @include bp(640) {
+        font-size: 12px;
+      }
+
+      @include bp(768) {
+        
+      }
+
+      @include bp(1024) {
+        font-size: 15px;
+        line-height: 18px;
+      }
+    }
+
+    &-btn {
+      display: none;
+
+      @include bp(768) {
+        position: absolute;
+        bottom: 0;
+        left: 145px;
+        display: inline-block;
+        font-size: 13px;
+        line-height: 15px;
+        text-decoration: underline;
+
+        &:after,
+        &:before {
+          position: absolute;
+          display: block;
+          content: "";
+          width: 5px;
+          height: 1px;
+          background-color: #565656;
+          top: 40%;
+          right: -10px;
+          transform: rotate(30deg);
+        }
+
+        &:after {
+          top: 59%;
+          transform: rotate(-30deg);
+        }
+      }
+
+      @include bp(1024) {
+        left: 175px;
+        font-size: 16px;
+      }
+    }
+  }
+
+  &-pic-container {
+    display: table-cell;
+    width: 30%;
+    vertical-align: middle;
+
+    img {
+      border-radius: 50%;
+    }
+
+    @include bp(1024) {
+      width: 136px;
+    }
+  }
+
+  &-animation {
+    @include bp(768) {
+      position: absolute;
+      top: 10px;
+      left: -10px;
+      bottom: 10px;
+      width: 0;
+      background-color: $yellow;
+      z-index: -1;
+      transition: .2s;
+    }
+  }
+
+  &.-selected {
+    transform: scale(1.01);
+  }
+
+  &:hover &-animation {
+    @include bp(768) {
+        width: calc(100% + 20px);
+      }
+  }
+}
+
+// COURSE PREVIEWS
+
+.course-previews {
+  &_title {
+    line-height: 20px;
+    padding: 25px 0 0 0;
+    background-color: transparent;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+
+  @include bp(1024) {
+    max-width: 80%;
+  }
+
+  @include bp(1200) {
+    max-width: 70%;
+  }
+
+  @include lp(768) {
+    width: 50%;
+  }
+
+  @include lp(520) {
+    width: 100%;
+  }
+}
+
+.course-preview {
+  display: block;
+  position: relative;
+  margin-bottom: 10px;
+  max-height: 50px;
+  padding: 0 20px;
+  overflow: hidden;
+  background-color: $green;
+  
+
+  &:before {
+    @include icon(left-arrow);
+    position: absolute;
+    right: 12px;
+    top: 18px;
+    transform: rotate(180deg);
+  }
+
+  &_title {
+    line-height: 49px;
+  }
+
+  @include bp(768) {
+    cursor: pointer;
+    background: linear-gradient(90deg, $yellow 50% , $green 50%);
+    background-size: 200% 100%;
+    background-position-x: 0;
+
+    &:hover {
+      background-position-x: -100%;
+
+      &:before {
+        right: 9px;
+      }
+    }
+  }
+}

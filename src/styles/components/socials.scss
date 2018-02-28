@@ -1,0 +1,33 @@
+.socials {
+  position: fixed;
+  right: 15px;
+  bottom: 85px;
+  width: 33px;
+  z-index: 999;
+
+  a {
+    position: relative;
+    display: block;
+    margin-bottom: 9px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, $yellow 50%, $green 50%);
+    background-size: 64px 64px;
+    text-align: center;
+    line-height: 32px;
+    transition: all 0.5s;
+
+    &:last-child {
+      padding-left: 3px; 
+    }
+
+    &:hover {
+      background-position-x: 32px; 
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

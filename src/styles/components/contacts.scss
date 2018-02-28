@@ -1,0 +1,78 @@
+.map {
+  margin-bottom: 20px;
+  width: calc(100% + 20px);
+  height: 320px;
+  margin-left: -10px;
+  background-color: $yellow;
+
+  @include bp(768) {
+    float: right;
+    margin-right: 10%;
+    width: 320px;
+  }
+}
+
+.contacts {
+  &-info {
+    margin: 15px 0;
+    font-size: 0.9rem;
+  }
+
+  &-link {
+    font-size: 1.1rem;
+    font-weight: 900;
+  }
+}
+
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  right: 10px;
+  border-top: 1px solid black;
+  text-align: left;
+  height: 50px;
+
+  @include bp(768) {
+    text-align: center;
+    height: 100px;
+    left: 90px;
+    right: 90px;
+  }
+
+  .year {
+    font-size: 15px;
+    line-height: 50px;
+
+    @include bp(768) {
+      line-height: 100px;
+    }
+  }
+}
+
+.footer-logo {
+  position: absolute;
+  display: block;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100px;
+  text-align: center;
+  font-size: 12px;
+
+  img {
+    display: block;
+    width: 100px;
+  }
+
+  @include bp(768) {
+    font-size: 15px;
+    width: 150px;
+
+    img {
+      margin-top: 10px;
+      width: 150px;
+    }
+  }
+}

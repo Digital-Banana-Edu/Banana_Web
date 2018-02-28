@@ -1,0 +1,526 @@
+@mixin p($position: "", $top: "", $right: "", $bottom: "", $left: "") {
+  @if $position != "" {
+    @if $position == "s" {
+      position: static;
+    }
+    @if $position == "r" {
+      position: relative;
+    }
+    @if $position == "a" {
+      position: absolute;
+    }
+    @if $position == "f" {
+      position: fixed;
+    }
+  }
+
+  @if $top != "" {
+    @if $top != "f" {
+      top: $top;
+    }
+
+    @if $top == "f" {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  @if $right != "" {
+    right: $right;
+  }
+  @if $bottom != "" {
+    bottom: $bottom;
+  }
+  @if $left != "" {
+    left: $left;
+  }
+}
+
+@mixin stretch() {
+  @include p(a,f);
+}
+
+@mixin bp($breakpoint) {
+  @media only screen and (min-width: $breakpoint + px) {
+    @content;
+  }
+}
+
+@mixin lp($breakpoint) {
+  @media only screen and (max-width: $breakpoint - 1 + px) {
+    @content;
+  }
+}
+
+@mixin bp-height($breakpoint) {
+  @media only screen and (min-height: $breakpoint + px) {
+    @content;
+  }
+}
+
+@mixin lp-height($breakpoint) {
+  @media only screen and (max-height: ($breakpoint - 1) + px) {
+    @content;
+  }
+}
+
+@mixin pseudo($content: '') {
+  display: inline-block;
+  content: $content;
+}
+
+@mixin triangle($direction, $color, $width, $height: "") {
+  border: $width solid transparent;
+
+  @if $height != "" {
+    border-width: $width $height;
+  }
+
+  @if $direction != "" {
+    @if $direction == "t" {
+      border-top-color: $color;
+    }
+    @if $direction == "r" {
+      border-right-color: $color;
+    }
+    @if $direction == "b" {
+      border-bottom-color: $color;
+    }
+    @if $direction == "l" {
+      border-left-color: $color;
+    }
+  }
+}
+
+@mixin triangle-color($direction, $color) {
+  border-color: transparent;
+
+  @if $direction != "" {
+    @if $direction == "t" {
+      border-top-color: $color;
+    }
+    @if $direction == "r" {
+      border-right-color: $color;
+    }
+    @if $direction == "b" {
+      border-bottom-color: $color;
+    }
+    @if $direction == "l" {
+      border-left-color: $color;
+    }
+  }
+}
+
+@mixin preloader($size, $border-width, $color: $brand-color) {
+  border: $border-width solid $color;
+  border-left-color: transparent;
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+
+@mixin triangle-t($color, $width, $scale-x: "1", $scale-y: "1") {
+  width: $width;
+  height: $width;
+  background: $color;
+  transform: rotate(45deg) scale($scale-x, $scale-y);
+}
+
+@mixin arrow() {
+  position: relative;
+  display: inline-block;
+  height: 6px;
+  vertical-align: middle;
+
+  &:before {
+    @include triangle(t, #000, 6px);
+    display: block;
+    content: '';
+  }
+
+  &:after {
+    @include triangle(t, $filter-bg, 6px);
+    @include p(a,-3px);
+    display: block;
+    content: '';
+  }
+
+  &:hover:before {
+    @include triangle(t, rgb(146, 28, 0), 6px);
+  }
+}
+
+@mixin arrows {
+  &:before {
+    @include p(a,"", 8px, 15px, "");
+    @include pseudo();
+    @include triangle(b,rgb(73,73,73),4px);
+  }
+
+  &:after {
+    @include p(a,"", 8px, 3px, "");
+    @include pseudo();
+    @include triangle(t,rgb(73,73,73),4px);
+  }
+}
+
+@mixin inline-icon($image) {
+  display: inline-block;
+
+  width: image-width($image);
+  height: image-height($image);
+
+  background-image: inline-image($image);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% auto;
+
+  content: "";
+}
+
+@mixin btn-decor($name) {
+  position: relative;
+
+  &:before {
+    @include pseudo();
+    @include icon($name);
+    vertical-align: top;
+  }
+}
+
+@mixin fade-out-gradient($from_color, $to_color, $width, $height, $direction: to right) {
+  position: relative;
+
+  &:after {
+    position: absolute;
+    display: block;
+    @if $direction == to right {
+      right: 0;
+      bottom: 0;
+    }
+    width: $width;
+    height: $height;
+    background: linear-gradient($direction, $from_color 0%, $to_color 50%, $to_color 100%);
+    content: "";
+  }
+}
+
+@mixin tile-grid($selector, $elememnts_in_col, $gutter, $offset) {
+  #{ $selector } {
+    margin-right: $gutter;
+    margin-top: $offset;
+
+    &:nth-child(#{$elememnts_in_col}n) {
+      margin-right: 0;
+    }
+  }
+
+  @for $i from 1 through $elememnts_in_col {
+    #{ $selector } {
+      &:nth-child(#{$i}) {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+@mixin hoverableFade($parent) {
+  transition: opacity .15s ease-in-out;
+  opacity: 0;
+
+  #{ $parent }:hover & {
+    opacity: 1;
+  }
+
+  .device-mobile & {
+    opacity: 1;
+  }
+}
+
+@mixin reset-element {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  text-align: inherit;
+  min-height: none;
+  min-width: none;
+  resize: none;
+
+  &:hover, &:active {
+    outline: none;
+  }
+}
+
+@mixin reset-button {
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: none;
+}
+
+@mixin reset-input {
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: none;
+}
+
+@mixin block-with-lateral-line() {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+  text-align: center;
+}
+
+@mixin decore-line($offsetTop, $color) {
+  content: "";
+  position: relative;
+  display: inline-block;
+
+  @if $offsetTop != 0 {
+    top: $offsetTop;
+  }
+
+  width: 50%;
+  height: 1px;
+  background-color: $color;
+  vertical-align: middle;
+}
+
+@mixin right-later-line($offset, $offsetTop: 0, $color: #ccc) {
+  @include block-with-lateral-line;
+
+  &:after {
+    @include decore-line($offsetTop, $color);
+    width: 100%;
+    right: -$offset;
+  }
+}
+
+@mixin lateral-line($offset, $offsetTop: 0, $color: #ccc) {
+  @include block-with-lateral-line;
+
+  &:before,
+  &:after {
+    @include decore-line($offsetTop, $color)
+  }
+
+  &:before {
+    left: -$offset;
+    margin: 0 0 0 -50%;
+  }
+
+  &:after {
+    left: $offset;
+    margin: 0 -50% 0 0;
+  }
+}
+
+@mixin lateral-line-color($color) {
+  &:after, &:before {
+    background-color: $color;
+  }
+}
+
+@mixin simple-arrow($size, $color: '', $direction: 'left', $width: 1px) {
+  display: block;
+  width: $size;
+  height: $size;
+
+  @if $color != '' {
+    border: 1px solid $color;
+  } @else {
+    border: 1px solid;
+  }
+
+  border-width: $width $width 0 0;
+  @if $direction == 'left' {
+    transform: rotate(-135deg);
+  }
+  @if $direction == 'right' {
+    transform: rotate(45deg);
+  }
+}
+
+
+@mixin hamburger($color, $width, $height, $offset) {
+  > * {
+    display: block;
+    width: $width;
+    height: $height;
+    background: $color;
+
+    &:not(:first-child) {
+      margin-top: $offset;
+    }
+  }
+}
+
+@mixin sticky-footer($bottom_offset, $layout_sel: '.page', $footer_sel: '.footer') {
+  #{$layout_sel} {
+    position: relative;
+    min-height: 100%;
+    padding-bottom: $bottom_offset;
+  }
+
+  #{$footer_sel} {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+@mixin centred-after-icon {
+  position: relative;
+
+  &:after {
+    @include stretch;
+    margin: auto;
+    content: '';
+  }
+}
+
+@mixin centred-before-icon {
+  position: relative;
+
+  &:before {
+    @include stretch;
+    margin: auto;
+    content: '';
+  }
+}
+
+@mixin text-fill-color($color) {
+  -webkit-text-fill-color: $color;
+  color: $color;
+}
+
+@mixin reset-input-autocomplete($bg, $color) {
+  &:-webkit-autofill {
+    -webkit-box-shadow: inset 0 0 0 50px $bg;
+    @include text-fill-color($color);
+  }
+}
+
+@mixin flex-control-paging-cirle($size, $offset, $bg, $bg-active) {
+  line-height: $size;
+  height: $size;
+
+  li {
+    display: inline-block;
+    margin: 0 $offset;
+  }
+
+  a {
+    display: block;
+    overflow: hidden;
+    width: $size;
+    height: $size;
+    text-indent: -2 * $size;
+    border-radius: 50%;
+    background: $bg;
+    cursor: pointer;
+
+    &.flex-active {
+      background: $bg-active;
+    }
+  }
+}
+
+/* --------------------------------------------------------
+ * Clearfix
+ * Source: http://nicolasgallagher.com/micro-clearfix-hack/
+ * --------------------------------------------------------
+
+// TODO использовать только после проверки не схлопываются margin-ы
+@mixin clearfix {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+*/
+
+@mixin clearfix {
+  &:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden;
+  }
+}
+
+/* --------------------------------------------------------
+ * Text overflow
+ * -------------------------------------------------------- */
+
+@mixin text-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------
+ * Hide text
+ * -------------------------------------------------------- */
+
+@mixin hide-text() {
+  // font: 0/0 a;
+  // color: transparent;
+  // text-shadow: none;
+  // background-color: transparent;
+  // border: 0;
+  overflow: hidden;
+  text-indent: 101%;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------
+ * Resizable
+ * -------------------------------------------------------- */
+
+@mixin resizable($direction) {
+  resize: $direction; // Options: horizontal, vertical, both
+  overflow: auto; // Safari fix
+}
+
+@mixin stretched {
+  @include p(a,f);
+}
+
+@mixin stretched-centred {
+  @include p(a,f);
+  margin: auto;
+}
+
+@mixin has-stretched-file-input {
+  input[type="file"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+}
+
+@mixin full-width-screen {
+  position: relative;
+  left: 50%;
+  margin-left: -50%;
+  width: 100vw;
+}

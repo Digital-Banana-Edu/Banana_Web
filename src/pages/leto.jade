@@ -1,0 +1,57 @@
+extends ./templates/course-layout.jade
+
+block title
+  title Летняя ИТ-программа Digital Banana
+
+block meta-content
+  meta(property="og:title" content="Летняя ИТ-программа Digital Banana 12-15 лет")
+  meta(property="og:image" content="assets/img/share_img.png")
+  meta(property="og:url" content= "http://digital-banana.ru/leto")
+  meta(name="yandex-verification" content="e0a4b2c7ceaacc9f")
+
+block form-dropdown
+  h4.form-title Курс
+  input.hidden(value="Летняя ИТ-программа" placeholder="Курс")
+  .course-name_placeholder Летняя ИТ-программа
+
+block form-age
+  ul.age-picker
+    li 12
+    li 13
+    li 14
+    li 15
+
+block teacher
+  iframe.leto-video(src="https://www.youtube.com/embed/t9vdtV3CeTo" frameborder="0" allowfullscreen)
+
+block course
+  h1 Летняя ИТ-программа
+  
+  .about-desc Программа длиной в 3 недели, посвященная современным востребованным цифровым специальностям: анимация, создание 2D игр и 3D игр, 3D моделирование, создание сайтов, программирование. За время программы ребята послушают интересные лекции от ведущих специалистов ИТ области, посетят офисы ИТ компаний Петербурга и соберут свое первое портфолио из 6 проектов.
+  .about-title 6 причин участвовать в Летней IT программе Digital Banana:
+  ul.reason-list
+    li Узнать, что такое создание 2D и 3D игр, 3D моделирование, создание сайтов и прикладная математика
+    li Поработать с самыми востребованными на данный момент специалистами 
+    li Обучится базовым навыкам по каждому из направлений и собрать портфолио 
+    li Разбираться в устройстве it и digital рынка и посетить крупнейшие ИТ компании Петербурга
+    li Захотеть стать успешным в it-сфере или понять, что it и digital неинтересны и не совершать ошибку в будущем при выборе профессии 
+    li Прекрасно провести время, в коллективе развивающихся сверстников
+
+  //- a.ui-btn.-primary.-programm(href="/programs/web.jpg" target="_blank") Скачать программу
+
+block price
+  .about-desc.-less-margin Стоимость 2017
+  .about-title 19 900 рублей
+
+block details
+  .about-desc Умение пользоваться компьютером
+  .about-title 
+    | Возраст: 
+    span 12-15 лет
+  .about-title 
+    | Старт курса: 
+    span июнь 2018
+  .about-title 
+    | Длительность: 
+    span 3 недели
+  .about-title 

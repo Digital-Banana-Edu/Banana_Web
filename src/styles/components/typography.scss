@@ -1,0 +1,49 @@
+h1, h2 {
+  color: black;
+  margin-bottom: 10px;
+  margin-left: -5px;
+  font-weight: 900;
+  font-size: 50px;
+  line-height: 50px;
+
+  @include bp(420) {
+    margin-bottom: 20px;
+    font-size: 65px;
+    line-height: 65px;
+  }
+
+  @include bp(1024) {
+    font-size: 95px;
+    line-height: 95px;
+  }
+}
+
+.hero-main_about {
+  color: black;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 19px;
+
+  a {
+    text-decoration: underline;
+  }
+
+  @include bp(420) {
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  @include bp(1024) {
+    font-size: 20px;
+    line-height: 26px;
+
+    a:hover {
+      color: blue;
+    }
+  }
+
+  @include bp(1200) {
+    font-size: 27px;
+    line-height: 33px;
+  }
+}

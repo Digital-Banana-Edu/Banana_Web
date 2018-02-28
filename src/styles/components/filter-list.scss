@@ -1,0 +1,127 @@
+.filter-list {
+  margin-bottom: 15px;
+
+  li {
+    margin: 0 0 5px;
+    height: 60px;
+    cursor: pointer;
+
+    @include bp(450) {
+      display: inline-block;
+      width: 50%;
+    }
+
+    @include bp(768) {
+      width: 100%;
+    }
+
+    @include bp(1024) {
+      margin: 0 0 30px;
+
+      &:hover .filter-list-pic:before {
+        background-position-x: -100%;
+      }
+    }
+
+    &.is-active {
+      .filter-list-pic:before {
+        background: $yellow;
+      }
+
+      .filter-list-info-title,
+      .filter-list-info-age {
+        font-weight: 600;
+      }
+    }
+  }
+
+  &-pic {
+    position: relative;
+    float: left;
+    margin: 0 10px 0 0;
+    width: 60px;
+    height: 60px;
+    background-color: transparent; 
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &:before {
+      z-index: -1;
+      display: block;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(90deg, $lightgray 50%, $green 50%);
+      background-size: 120px;
+      background-position-x: 0;
+      transition: all 0.2s;
+    }
+
+    &.code {
+      background-image: url("../img/ico-code.svg");
+    }
+
+    &.games {
+      background-image: url("../img/ico-games.svg");
+    }
+
+    &.kids {
+      background-image: url("../img/ico-design.svg");
+    }
+
+    &.random {
+      background-image: url("../img/ico-language.svg");
+    }
+
+    @include bp(1024) {
+      margin: 0 20px 0 0;
+      width: 80px;
+      height: 80px;
+      background-size: 80px;
+
+      &:before {
+        width: 80px;
+        height: 80px;
+        background-size: 160px;
+      }
+    }
+  }
+
+  &-info {
+    display: inline-block;
+    padding-top: 12px;
+
+    @include bp(1024) {
+      padding-top: 17px;
+    }
+
+    &.-single-title {
+      padding-top: 0;
+      line-height: 60px;
+
+      @include bp(1024) {
+        line-height: 80px;
+      }
+    }
+
+    &-title {
+      margin-bottom: 5px;
+      font-size: 14px;
+
+      @include bp(1024) {
+        font-size: 20px;
+      }
+    }
+
+    &-age {
+      font-size: 12px;
+
+      @include bp(1024) {
+        font-size: 16px;
+      }
+    }
+  }
+}

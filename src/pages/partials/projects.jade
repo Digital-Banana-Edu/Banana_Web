@@ -1,0 +1,46 @@
+-
+  var projectList = [
+    {
+      name: "Цифровые Джунгли",
+      pic: "./assets/img/jungle-preview.jpg",
+      url: "http://digitaljungle.ru",
+      desc_1: "Цифровые джунгли — образовательно-развлекательное IT-событие. Прошло в 2016/2017 году в Санкт-Петербурге и в 2017 году в Москве.",
+      desc_2: "На одной площадке собрались представители более 40 IT компаний : Avito, Microsoft, Intel, ABBYY, Eset, Kaspersky, Playrix, КРОК, ASUS и другие, чтобы рассказать школьникам, студентам и их родителям о том, как выбрать будущую профессию, где получать высшее и дополнительное образование, какие перспективы отрасли в ближайшие 5-10 лет. Мероприятие, в общей сложности, посетило более 2500 человек.",
+      linkText: "Сайт проекта"
+    },
+    {
+      name: "Лекторий Цифровая грамотность",
+      pic: "./assets/img/lections-preview.jpg",
+      url: "https://vk.com/digital_banana?w=wall-54916180_863",
+      desc_1: "Лекторий 'Цифровая грамотность' - дискуссионно-информационный клуб для школьников и их родителей, где мы затрагиваем разные темы посвященные современным специальностям и образованию.",
+      desc_2: "Открытые выступления различных специалистов, где они могли делиться своими знаниями, опытом, интересными фактами и открытиями в области технологий. Цель - популяризировать технические науки и цифровое творчество среди молодежи.",
+      linkText: "Все видео"
+    },
+    {
+      name: "Видео-курс BamBam Games",
+      pic: "./assets/img/bambam-preview.png",
+      url: "https://www.youtube.com/channel/UC58UhbOVnYXD9C2MeI2ASbQ/videos",
+      desc_1: "Если ты еще не пробовал создавать игры, но очень хочется - лови видеокурс BamBamGames и всего за пару дней научись создавать прикольный платформер с несколькими уровнями и опасностями!",
+      desc_2: "По ссылке ниже 10 видео по 10-20 минут, в которых последовательно рассказывается, как построить процесс создания своего игрового проекта и наполнить игровой мир мелкими деталями, чтобы он запоминался игрокам.",
+      linkText: "Все видео"
+    }
+  ]
+
+mixin project-list(project)
+  li.project
+    .project-pic
+      img(src=project.pic)
+    .project-info
+      .project-title= project.name
+      .project-desc= project.desc_1
+      .project-desc= project.desc_2
+      a.ui-btn(target="_blank" href=project.url)= project.linkText
+
+section.section-projects#projects
+  .container
+    .content
+      .content-header
+        h2 Тоже наше
+      ul.project-list
+        for project in projectList
+          +project-list(project)

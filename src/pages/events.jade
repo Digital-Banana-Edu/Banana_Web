@@ -1,0 +1,258 @@
+extends templates/page-custom-layout.jade
+
+block title
+  title Ближайшие события Digital Banana
+
+block content
+  section.section-blog#blog
+    .container
+      a.bananatag(target="_blank" href="https://www.instagram.com/digital_banana/").ga_bananatag #DIGITALBANANA
+      .socials
+        a.social__vk(target="_blank" href="https://vk.com/digital_banana").ga_vk vk
+        a.social__fb(target="_blank" href="https://www.facebook.com/digitalbananaschool/").ga_fb f
+        a.social__inst(target="_blank" href="https://www.instagram.com/digital_banana/").ga_ins ins
+      .feedBackWrapperFree.form-person.is-closed.container
+        .form-exit-free
+        .content
+          .wrapper-right.wrapper-right_form
+            h2
+              | Заявка на
+              br
+              | интенсив
+            
+          .wrapper-right.wrapper-right_form
+            h4.form-title Ваш телефон
+            input.isrequired.input(type="text" placeholder="phone")
+            h4.form-title Ваша почта
+            input.isrequired.input(type="text" placeholder="mail")
+            h4.form-title Ваше имя
+            input.isrequired.input(type="text" placeholder="parentName")
+            input.isrequired.hidden#fastcourse(type="text" placeholder="fastcourse")
+            .terms
+              .desc Я соглашаюсь на обработку моих персональных данных
+                .checkbox
+              input.isrequired.hidden.check(type="checkbox")
+              br
+              a(href="/license.pdf" target="_blank") Политика конфеденциальности Digital Banana
+            .ajaxgofree Отправить форму
+
+      .successmsg
+        .successmsg-title Ваша заявка принята!
+        .successmsg-desc В ближайшее время мы свяжемся с вами!
+        img(src="./assets/img/roll.png")
+              
+      .content
+        .content-header
+          h1 Ближайшие события
+          .bread-crumbs
+            a.bread-crumbs-link(href="/") Digital Banana
+            |  / Events
+        ul.project-list
+
+          //- li.project
+          //-   .project-pic
+          //-     img(src="assets/img/event-web.jpg")
+          //-   .project-info
+          //-     .project-title 
+          //-       | Интенсив по разработке сайтов 
+          //-       br
+          //-       | Создание сайтов HTML/CSS  
+          //-     .project-subtitle Дата: 3 и 4 января 
+          //-     .project-subtitle Время интенсива: 12:00-15:00 
+          //-     .project-subtitle Возраст участников: 13-16 лет
+          //-     .project-subtitle Стоимость занятия: 3 500 Р 
+             
+          //-     .project-desc Веб-среда с каждым днем забирает все более сложные проекты. Онлайн-сервисы: интернет-бухгалтерия, биржи криптовалют, интернет-магазины, записи учета клиентов — это все создается веб-разработчиками
+          //-     .project-desc За время занятий участники узнают: Из чего состоит разработка сайтов и на какие специальности она делится. Познакомятся с языками HTML, CSS. Разработают небольшой личный новогодний сайт
+
+
+          //-     a.ui-btn.js-freeBtn(course="web интенсив") Записаться на интенсив
+
+          //- li.project
+          //-   .project-pic
+          //-     img(src="assets/img/event-2d.jpg")
+          //-   .project-info
+          //-     .project-title 
+          //-       | Интенсив по 2D играм 
+          //-       br
+          //-       | Создание своей игры с нуля 
+          //-     .project-subtitle Дата: 5 и 6 января 
+          //-     .project-subtitle Время интенсива: 12:00-15:00 
+          //-     .project-subtitle Возраст участников: 11-14 лет
+          //-     .project-subtitle Стоимость занятия: 3 500 Р 
+          //-     .project-desc Разработка игр на Construct 2 — идеальный способ для ребенка начать знакомиться с игровой индустрией благодаря низкому порогу сложности и небольшому периоду разработки. За время занятий участники узнают как создаются 2D-игры и сделают небольшую игру, которую можно будет запустить на домашнем компьютере
+          //-     a.ui-btn.js-freeBtn(course="2d интенсив") Записаться на интенсив
+
+          //- li.project
+          //-   .project-pic
+          //-     img(src="assets/img/event-art.jpg")
+          //-   .project-info
+          //-     .project-title 
+          //-       | Интенсив по Концепт-арту 
+          //-       br
+          //-       | Рисунок персонажа  
+          //-     .project-subtitle Дата: 5 и 6 января 
+          //-     .project-subtitle Время интенсива: 15:00-18:00 
+          //-     .project-subtitle Возраст участников: 12-18 лет
+          //-     .project-subtitle Стоимость занятия: 3 500 Р 
+          //-     .project-desc Сегодня ни одно серьезное произведение массовой культуры не обходится без заранее подготовленных художественных основ - концепт-арта. Художник визуализирует вымышленные миры, создает облик персонажей и окружения - все для того, чтобы вдохнуть жизнь в будущий проект.За время занятий участники узнают основы работы в графическом редакторе и историю развития концепт-арта в игровой индустрии. После нарисуют персонажа и его помощника на графическом планшете
+
+          //-     a.ui-btn.js-freeBtn(course="art интенсив") Записаться на интенсив
+          
+          //- li.project
+          //-   .project-pic
+          //-     img(src="assets/img/event-3d.jpg")
+          //-   .project-info
+          //-     .project-title 
+          //-       | Открытый урок 
+          //-       br
+          //-       | Программирование 3D игр 
+          //-     .project-subtitle Дата: 16 января 
+          //-     .project-subtitle Время урока: 19:00-20:00 
+          //-     .project-subtitle Возраст участников: 14-17 лет
+          //-     .project-subtitle Стоимость занятия: бесплатно
+             
+          //-     .project-desc На открытом уроке ребята смогут узнать что такое программирование С# на самом популярном движке для создания игр Unity, освоят его интерфейс и создадут свой игровой уровень из подготовленных ассетов.
+
+
+          //-     a.ui-btn(target="_blank" href="https://bananaschool.timepad.ru/event/622945/") Записаться на открытый урок
+          //- li.project
+          //-   .project-pic
+          //-     img(src="assets/img/event-blockchain.jpg")
+          //-   .project-info
+          //-     .project-title 
+          //-       | Открытый урок 
+          //-       br
+          //-       | Основы Блокчейн
+          //-     .project-subtitle Дата: 17 января 
+          //-     .project-subtitle Время урока: 20:00-21:00 
+          //-     .project-subtitle Возраст участников: 14-17 лет
+          //-     .project-subtitle Стоимость занятия: бесплатно
+             
+          //-     .project-desc Если вас никогда не пугала математика, и вы всегда хотели быть в курсе самых актуальных технологий — обязательно посетите открытый урок курса по основам блокчейн-технологий и криптографии. С первого же занятия вы научитесь передавать информацию другим, не боясь, что она попадет в чужие руки.
+
+
+          //-     a.ui-btn(target="_blank" href="https://bananaschool.timepad.ru/event/622962/") Записаться на открытый урок
+
+          //- li.project
+          //-   .project-pic
+          //-     img(src="assets/img/event-scratch.png")
+          //-   .project-info
+          //-     .project-title 
+          //-       | Открытый урок 
+          //-       br
+          //-       | Программирование в Scratch 
+          //-     .project-subtitle Дата: 21 января 
+          //-     .project-subtitle Время урока: 12:00-13:00 
+          //-     .project-subtitle Возраст участников: 9-12 лет
+          //-     .project-subtitle Стоимость занятия: бесплатно
+             
+          //-     .project-desc На открытом уроке ребята познакомятся с основами программирования в среде Scratch. Все будет показано на примере создания простой игры, в которой запрограммированный мышонок будет пытаться догнать сыр.
+
+
+          //-     a.ui-btn(target="_blank" href="https://bananaschool.timepad.ru/event/622991/") Записаться на открытый урок
+          //- li.project
+          //-   .project-pic
+          //-     img(src="assets/img/event-2d.jpg")
+          //-   .project-info
+          //-     .project-title 
+          //-       | Открытый урок 
+          //-       br
+          //-       | Создание 2D игр 
+          //-     .project-subtitle Дата: 21 января 
+          //-     .project-subtitle Время урока: 13:00-14:00 
+          //-     .project-subtitle Возраст участников: 11-14 лет
+          //-     .project-subtitle Стоимость занятия: бесплатно
+             
+          //-     .project-desc На открытом уроке ребята познакомятся с одним из самых популярных движков для создания 2D игр — Construct 2 и соберут с его помощью свои индивидуальные небольшие проекты.
+
+
+          //-     a.ui-btn(target="_blank" href="https://bananaschool.timepad.ru/event/622991/") Записаться на открытый урок
+
+
+          //- li.project
+          //-   .project-pic
+          //-     img(src="assets/img/event-blockchain.jpg")
+          //-   .project-info
+          //-     .project-title 
+          //-       | Открытый урок 
+          //-       br
+          //-       | Основы Блокчейн
+          //-     .project-subtitle Дата: 24 января 
+          //-     .project-subtitle Время урока: 20:00-21:00 
+          //-     .project-subtitle Возраст участников: 14-17 лет
+          //-     .project-subtitle Стоимость занятия: бесплатно
+             
+          //-     .project-desc Если вас никогда не пугала математика, и вы всегда хотели быть в курсе самых актуальных технологий — обязательно посетите открытый урок курса по основам блокчейн-технологий и криптографии. С первого же занятия вы научитесь передавать информацию другим, не боясь, что она попадет в чужие руки.
+
+
+          //-     a.ui-btn(target="_blank" href="https://bananaschool.timepad.ru/event/622995/") Записаться на открытый урок
+
+          //- li.project
+          //-   .project-pic
+          //-     img(src="assets/img/event-3d.jpg")
+          //-   .project-info
+          //-     .project-title 
+          //-       | Открытый урок 
+          //-       br
+          //-       | Программирование 3D игр 
+          //-     .project-subtitle Дата: 26 января 
+          //-     .project-subtitle Время урока: 19:00-20:00 
+          //-     .project-subtitle Возраст участников: 14-17 лет
+          //-     .project-subtitle Стоимость занятия: бесплатно
+             
+          //-     .project-desc На открытом уроке ребята смогут узнать что такое программирование С# на самом популярном движке для создания игр Unity, освоят его интерфейс и создадут свой игровой уровень из подготовленных ассетов.
+
+          //-     a.ui-btn(target="_blank" href="https://bananaschool.timepad.ru/event/623005/") Записаться на открытый урок
+
+
+          //- li.project
+          //-   .project-pic
+          //-     img(src="assets/img/event-scratch.png")
+          //-   .project-info
+          //-     .project-title 
+          //-       | Открытый урок 
+          //-       br
+          //-       | Программирование в Scratch 
+          //-     .project-subtitle Дата: 28 января 
+          //-     .project-subtitle Время урока: 12:00-13:00 
+          //-     .project-subtitle Возраст участников: 9-12 лет
+          //-     .project-subtitle Стоимость занятия: бесплатно
+             
+          //-     .project-desc На открытом уроке ребята познакомятся с основами программирования в среде Scratch. Все будет показано на примере создания простой игры, в которой запрограммированный мышонок будет пытаться догнать сыр.
+
+
+          //-     a.ui-btn(target="_blank" href="https://bananaschool.timepad.ru/event/623000/") Записаться на открытый урок
+          //- li.project
+          //-   .project-pic
+          //-     img(src="assets/img/event-2d.jpg")
+          //-   .project-info
+          //-     .project-title 
+          //-       | Открытый урок 
+          //-       br
+          //-       | Создание 2D игр 
+          //-     .project-subtitle Дата: 28 января 
+          //-     .project-subtitle Время урока: 13:00-14:00 
+          //-     .project-subtitle Возраст участников: 11-14 лет
+          //-     .project-subtitle Стоимость занятия: бесплатно
+             
+          //-     .project-desc На открытом уроке ребята познакомятся с одним из самых популярных движков для создания 2D игр — Construct 2 и соберут с его помощью свои индивидуальные небольшие проекты.
+
+
+          //-     a.ui-btn(target="_blank" href="https://bananaschool.timepad.ru/event/623000/") Записаться на открытый урок
+
+          li.project
+            .project-pic
+              img(src="assets/img/jungle-preview.jpg")
+            .project-info
+              .project-title 
+                | Цифровые Джунгли 
+              .project-subtitle Дата: 18 февраля 
+              .project-subtitle Время проведения: 11:00-19:00 
+              .project-subtitle Место проведения: ИТМО, Ломоносова 9
+              .project-subtitle Стоимость билета: 400 рублей
+             
+              .project-desc Цифровые Джунгли — большое мероприятие о карьере в IT для студентов, старшеклассников и их родителей. Участие примут более 30 IT компаний и 800 посетителей.
+
+
+              a.ui-btn(target="_blank" href="https://bananaschool.timepad.ru/event/618605/") Купить билет

@@ -1,0 +1,57 @@
+extends ./templates/course-layout.jade
+
+block title
+  title Английский для ИТ в школе Digital Banana
+
+block meta-content
+  meta(property="og:title" content="Английский для ИТ в школе Digital Banana")
+  meta(property="og:image" content="assets/img/share_img.png")
+  meta(property="og:url" content= "http://digital-banana.ru/english")
+  meta(name="yandex-verification" content="e0a4b2c7ceaacc9f")
+
+block form-dropdown
+  h4.form-title Курс
+  input.hidden(value="English" placeholder="Курс")
+  .course-name_placeholder Английский для ИТ
+
+block form-age
+  ul.age-picker
+    li 12
+    li 13
+    li 14
+    li 15
+    li 16
+
+block teacher
+  .teacher-photo
+    img(src="assets/img/teacher-english.jpg")
+  .about-title Марьяна Деменьтева
+  .about-desc В течение трех с половиной лет работала переводчиком в европейской компании. Окончила РГПУ им Герцена. В течение четырех лет занималась репетиторством со старшими школьниками. Работает над переводом учебников английского языка российских авторов.
+
+block course
+  h1 Английский язык для ИТ
+  h2 Грамматика / Разговор / Презентация проекта
+  
+  .about-desc Английский язык — то, без чего очень сложно обойтись каждому специалисту в наше время. Особенно, если мы говорим про IT/digital технологии. Хороший it-специалист постоянно читает актуальные новости своей области. И, как правило, последние тенденции всегда появляются именно на английском. Часть из них успевает устареть, так и не дождавшись перевода. Прибавим к этому командировки и презентации перед иностранными коллегами и можно уже не сомневаться в необходимости изучения языка. 
+  .about-desc Также в Digital Banana мы считаем, что лучше привыкать к оригинальному программному обеспечению. И что бы ребятам было проще ориентироваться в программах мы решили создать факультативное занятие по английскому языку, где основной упор будет сделан на необходимый словарный запас и способность защищать презентации по своему профилю. 
+  .about-desc * Занятия общие для всех учеников курсов. Пойти на факультатив, не являясь студентом одной из основных программ, нельзя.  
+
+block price
+  .about-desc.-less-margin Стоимость в месяц
+  .about-title 3 000 рублей
+
+block details
+  .about-desc Любой
+  .about-title 
+    | Возраст: 
+    span 12-16 лет
+  .about-title 
+    | Старт курса: 
+    span 14.10
+  .about-title 
+    | Длительность: 
+    span 7 месяцев
+  .about-title 
+    | Расписание:      
+    span.date вс
+    span 11:30 - 13:00 / 13:00 - 12:30
