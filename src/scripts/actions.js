@@ -289,25 +289,4 @@ $(document).ready(function() {
     }
   }, 1500);
 
-  
-
-
-
-  // setTimeout(function() {
-  //   $('.appear-block').removeClass('-new');
-  // }, 300);
-
-  // $('.course').click(function() {
-  //   event.preventDefault();
-  //   var link = $(this).attr('href') + '.html';
-  //   $(this).addClass('-selected');
-
-  //   setTimeout(function() {
-  //     $('.appear-block').addClass('-new');
-  //   }, 400);
-
-  //   setTimeout(function() {
-  //     location.href = link;
-  //   }, 900);
-  // })
 });

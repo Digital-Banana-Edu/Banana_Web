@@ -7,7 +7,6 @@ var runSequence = require('run-sequence');
 var watch = require('gulp-watch');
 var declare = require('gulp-declare');
 var concat = require('gulp-concat');
-var coffee = require('gulp-coffee');
 var source = require('vinyl-source-stream');
 var browserify = require('browserify');
 var spritesmith = require('gulp.spritesmith');
@@ -78,9 +77,7 @@ gulp.task('blog', function() {
 
 gulp.task('scripts', function() {
   browserify({
-    entries: './src/scripts/main.coffee',
-    extensions: ['.coffee'],
-    transform: ["coffeeify"]
+    entries: './src/scripts/main.js'
   }).bundle()
     .on('error', function (err) {
       console.log(err.toString());
