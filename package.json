@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
-  "dependencies": {},
+  "dependencies": {
+    "jade": "^1.11.0"
+  },
   "devDependencies": {
     "browserify": "^13.3.0",
     "coffeeify": "^2.1.0",
