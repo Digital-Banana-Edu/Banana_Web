@@ -6,7 +6,3 @@ const ga = require('./ga.js');
 
 require('./actions.js');
 require('./components/form.js');
-
-$(document).ready(function() {
-	console.log(123);
-})
