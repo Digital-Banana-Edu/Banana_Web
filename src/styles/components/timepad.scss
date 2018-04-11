@@ -1,0 +1,10 @@
+.b-main_type_feed .b-pro-wiget {
+  display: flex !important;
+
+  &-b-pro-wiget__date {
+    margin: 0 0 8px !important;
+    font-weight: 900 !important;
+    font-size: 0.9rem !important;
+    //color: $text-color !important;
+  }
+}
