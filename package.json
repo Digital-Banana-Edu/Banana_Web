@@ -4,6 +4,7 @@
   "description": "",
   "main": "main.js",
   "dependencies": {
+    "font-awesome": "^4.7.0",
     "jade": "^1.11.0"
   },
   "devDependencies": {

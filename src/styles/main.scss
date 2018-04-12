@@ -29,6 +29,7 @@
 @import 'components/blog';
 @import 'components/testimonials';
 @import "components/timepad";
+@import "../../node_modules/font-awesome/scss/font-awesome.scss";
 
 #vk_community_messages {
   right: 15px !important;
@@ -69,6 +70,10 @@
   font-size: 11px;
   font-weight: 600;
   text-transform: uppercase;
+
+  &.bottom-link-leto{
+    bottom: 0px;
+  }
 
   &:hover {
     &:before {
@@ -135,6 +140,10 @@
   top: -150px;
   left: 0;
   width: 90%;
+}
+
+.margin-bottom-small{
+  margin-bottom: 0px !important;
 }
 
 

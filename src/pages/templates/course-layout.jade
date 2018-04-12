@@ -42,7 +42,7 @@ html
             block price
 
             .ui-btn.-primary.-course.js-formBtn Оставить заявку
-            .about-desc Задать любой вопрос можно по телефону
+            .about-desc.margin-bottom-small Задать любой вопрос можно по телефону:
             a.about-title(href="tel:89650184751") 8 (965) 018-47-51
             
           .course-right
@@ -62,7 +62,14 @@ html
             a.about-title(href="tel:89650184751") 8 (965) 018-47-51
             script(type="text/javascript").
               document.write(VK.Share.button(false,{type: "round", text: "Поделиться"})); 
-            
+
+    //
+    //
+    //    a(href="#about_leto").bottom-link.bottom-link-leto Узнайте больше
+    //
+    //section.section-course#about_leto
+    //  .container
+    //    include ../partials/about_leto.jade
 
     include ../partials/body-scripts.jade
     

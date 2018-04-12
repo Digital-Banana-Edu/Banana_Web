@@ -3,7 +3,37 @@
   min-height: 230px;
 }
 
+p.inline{
+  padding: 0 10px 0 5px;
+  font-size: 15px;
+  line-height: 17px;
+  display: inline;
+}
+
+.gallery-leto{
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+.list-facts {
+  margin-top: 10px;
+}
+
+.bottom-title-leto{
+  margin-top: 20px;
+}
+
+.list-facts-el{
+    margin-bottom: 10px;
+    font-size: 15px;
+    line-height: 17px;
+}
+
 .reason-list {
+  &.none-list-type{
+    list-style-type: none;
+  }
+
   li {
     position: relative;
     margin-bottom: 5px;
