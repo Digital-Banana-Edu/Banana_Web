@@ -91,14 +91,14 @@
         background-size: 30px;
         background-position: 15px 15px;
 
-      &.small {
-        padding: 15px 0;
-        background-position: 15px 10px
-      }
+        &.small {
+          padding: 15px 0;
+          background-position: 15px 10px
+        }
 
         &:hover {
           background-color: $green;
-          background-position-y: 15px; 
+          // background-position-y: 15px; 
         }
       }
       

@@ -1,5 +1,9 @@
 /* Slider */
 
+.slick-list.draggable {
+    padding: 0!important;
+}
+
 .slick-slider {
     position: relative;
     display: block;
