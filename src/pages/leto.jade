@@ -10,9 +10,13 @@ block meta-content
   meta(name="yandex-verification" content="e0a4b2c7ceaacc9f")
 
 block form-dropdown
-  h4.form-title Курс
-  input.hidden(value="Летняя ИТ-программа" placeholder="Курс")
-  .course-name_placeholder Летняя ИТ-программа
+  h4.form-title Выберите месяц
+  .dropdown.is-closed
+    input.isrequired.dropdown-input.hidden(type="text" placeholder="Летняя IT программа")
+    .dropdown-toggle
+    ul.dropdown-menu.is-hidden
+      li Июнь
+      li Август
 
 block form-age
   ul.age-picker
@@ -24,89 +28,38 @@ block form-age
 block teacher
   iframe.leto-video(src="https://www.youtube.com/embed/t9vdtV3CeTo" frameborder="0" allowfullscreen)
 
-  .about-photos
-    img(src="assets/img/leto-pic-1.jpg")
-    //- .about-photo
-    //-   img(src="https://sun9-2.userapi.com/c840429/v840429430/6bd08/JlGvKSpRe2c.jpg")
-    //- .about-photo
-    //-   img(src="https://pp.userapi.com/c837235/v837235576/32607/XiY9Z41AQNE.jpg")
-    //- .about-photo
-    //-   img(src="https://pp.userapi.com/c638724/v638724748/59766/Uw0XQieHfHY.jpg")
-    //- .about-photo
-    //-   img(src="https://pp.userapi.com/c638724/v638724748/5973e/fr51A4bA4wc.jpg")
-    //- .about-photo
-    //-   img(src="https://pp.userapi.com/c638723/v638723060/55218/a4wIR32yik0.jpg")
-
-  //- .about-photos-nav
-  //-   .about-photo-nav
-  //-     img(src="https://sun9-2.userapi.com/c840429/v840429430/6bd08/JlGvKSpRe2c.jpg")
-  //-   .about-photo-nav
-  //-     img(src="https://pp.userapi.com/c837235/v837235576/32607/XiY9Z41AQNE.jpg")
-  //-   .about-photo-nav
-  //-     img(src="https://pp.userapi.com/c638724/v638724748/59766/Uw0XQieHfHY.jpg")
-  //-   .about-photo-nav
-  //-     img(src="https://pp.userapi.com/c638724/v638724748/5973e/fr51A4bA4wc.jpg")
-  //-   .about-photo-nav
-  //-     img(src="https://pp.userapi.com/c638723/v638723060/55218/a4wIR32yik0.jpg")
-
 block course
   h1 Летняя ИТ-программа
   
   .about-desc Программа длиной в 3 недели, посвященная современным востребованным цифровым специальностям: анимация, создание 2D игр и 3D игр, 3D моделирование, создание сайтов, программирование. За время программы ребята послушают интересные лекции от ведущих специалистов ИТ области, посетят офисы ИТ компаний Петербурга и соберут свое первое портфолио из 6 проектов.
-  .about-title Причины участвовать в Летней ИТ-программе Digital Banana:
+  .about-title 6 причин участвовать в Летней IT программе Digital Banana:
   ul.reason-list
     li Узнать, что такое создание 2D и 3D игр, 3D моделирование, создание сайтов и прикладная математика
     li Поработать с самыми востребованными на данный момент специалистами 
     li Обучится базовым навыкам по каждому из направлений и собрать портфолио 
-    li Разобраться в устройстве ИТ и digital рынка и посетить крупнейшие ИТ компании Петербурга
-    li Захотеть стать успешным в ИТ-сфере или понять, что ИТ и digital неинтересны и не совершать ошибку в будущем при выборе профессии
+    li Разбираться в устройстве it и digital рынка и посетить крупнейшие ИТ компании Петербурга
+    li Захотеть стать успешным в it-сфере или понять, что it и digital неинтересны и не совершать ошибку в будущем при выборе профессии 
     li Прекрасно провести время, в коллективе развивающихся сверстников
 
-  .about-title.bottom-title-leto Факты о Летней ИТ-программе:
-  div.list-facts
-    div.list-facts-el
-      i.fa.-leto-fa.fa-clock-o(aria-hidden="true")
-      p.inline Более 15 часов практических занятий
-    div.list-facts-el
-      i.fa.-leto-fa.fa-users(aria-hidden="true")
-      p.inline Ребята занимаются в небольших группах по 8 человек, что позволяет успевать преподавателям в достаточной мере общаться с каждым ребенком
+  a.ui-btn.-primary.-programm(href="./summerProgramm.pdf" target="_blank") Скачать программу
 
-    div.list-facts-el
-      i.fa.-leto-fa.fa-map-marker(aria-hidden="true")
-      p.inline Участников встречают и провожают до метро
-    div.list-facts-el
-      i.fa.-leto-fa.fa-cutlery(aria-hidden="true")
-      p.inline В учебном классе всегда есть вода, соки, сушки и фрукты
-    div.list-facts-el
-      i.fa.-leto-fa.fa-desktop(aria-hidden="true")
-      p.inline Классы оснащены современным оборудованием
-    div.list-facts-el
-      i.fa.-leto-fa.fa-arrow-up(aria-hidden="true")
-      p.inline Мы следим за индивидуальными достижениями каждого ребенка и помогаем с выбором будущей профессии
-    div.list-facts-el
-      i.fa.-leto-fa.fa-thumbs-up(aria-hidden="true")
-      p.inline Уже более 100 ребят 12-16 лет прошли нашу программу. Более 70% из них продолжили обучение в IT-сфере
 
-  //ToDo: ПУТИ
-  a.ui-btn.-primary.-programm.small(href="./summerProgramm.pdf" target="_blank") Предварительное расписание
-
-  //- a.ui-btn.-primary.-programm(href="/programs/web.jpg" target="_blank") Скачать программу
 
 block price
-  .about-desc.-less-margin Стоимость:
-  .about-title 18900 рублей до 15 апреля
+  .about-desc.-less-margin Стоимость 2018
+  .about-title 18900 рублей до 15 апреля.
 
 block details
-  .about-desc Базовое умение пользоваться компьютером
+  .about-desc Умение пользоваться компьютером
   .about-title 
     | Возраст: 
-    span 12-16 лет
+    span 12-15 лет
   .about-title 
-    | Даты программы:
-    span  4-24 июня / 6-26 августа
+    | Даты программы: 
+    span 4-24 июня / 6-26 августа
   .about-title 
-    | Адрес:
-    span  Кантемировская 2, БЦ Таймс
-  .about-title
-    
-
+    | Длительность: 
+    span 3 недели
+  .about-title 
+    | Адрес проведения:
+    span Кантемировская, 2, БЦ Таймс
