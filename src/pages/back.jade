@@ -1,0 +1,58 @@
+extends ./templates/course-layout.jade
+
+block title
+    title Back-end разработка в школе Digital Banana 14-16 лет
+
+block meta-content
+    meta(property="og:title" content="Back-end разработка в школе Digital Banana 14-16 лет")
+    meta(property="og:image" content="assets/img/share_img.png")
+    meta(property="og:url" content= "http://digital-banana.ru/back")
+    meta(name="yandex-verification" content="e0a4b2c7ceaacc9f")
+
+block form-dropdown
+    h4.form-title Курс
+    input.hidden(value="Back-end разработка" placeholder="Курс")
+    .course-name_placeholder Back-end разработка
+
+block form-age
+    ul.age-picker
+        li 13*
+        li 14
+        li 15
+        li 16
+
+block teacher
+    .teacher-photo
+        img(src="assets/img/teacher-web-1.jpg")
+    .about-title Антон Волков
+    .about-desc Web-разработчик в компании DSX Technologies и технический специалист в Digital Banana.
+
+block course
+    h1 Back-end разработка
+    h2 Node.js
+
+    .about-desc Web-разработчики — это специалисты, которые занимаются созданием сайтов и различных интернет-сервисов. Сфера web-разработки с каждым годом становится все более технологичной и интересной.
+    .about-desc За два года ребята пройдут весь путь от верстки первых простых элементов с применением HTML и CSS, до запуска и отладки полноценного web-приложения. В процессе ученики узнают, как устроена внутренняя кухня сайтов в интернете, познакомятся с профессиональными инструментами сборки и запуска проектов, поработают в командах и научатся писать код на одном из самых популярных языков в мире - JavaScript. На выходе они будут готовы заниматься своими собственными проектами и будут конкурентоспособными на рынке фриланса.
+
+    a.ui-btn.-primary.-programm(href="/programs/web.jpg" target="_blank") Скачать программу
+
+block price
+    .about-desc.-less-margin Стоимость в месяц
+    .about-title 6 500 рублей
+
+block details
+    .about-desc Умение пользоваться компьютером, базовое знание основ программирования на любом языке будет преимуществом
+    .about-title
+        | Возраст:
+        span 14-16 лет
+    .about-title
+        | Старт курса:
+        span сентябрь 2018
+    .about-title
+        | Длительность:
+        span 14 месяцев (2 года)
+    .about-title
+        | Расписание:
+        span.date пн
+        span.date чт
+        span 17:00 - 18:45 / 19:00 - 20:45
