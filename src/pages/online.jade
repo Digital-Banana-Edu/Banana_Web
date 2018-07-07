@@ -1,0 +1,115 @@
+doctype html
+html
+    head
+        title Digital Banana - цифровые технологии для школьников средних и старших классов
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        meta(name="google-site-verification" content="A8xv1M353T6Z4wN29JtemIWpEzuqTafga1F87qYW1cw")
+        link(rel="stylesheet" href="assets/css/main.css")
+        link(rel="shortcut icon" href="assets/img/favicon.png")
+
+        meta(property="og:title" content="Digital Banana - цифровые технологии для школьников средних и старших классов")
+        meta(property="og:description" content="Курсы, мероприятия, общение с профессионалами рынка. Мы делаем все возможное, чтобы дать каждому ученику первый опыт в профессии и помочь сделать осознанный выбор в будущем.")
+        meta(property="og:image" content="assets/img/share_img.png")
+        meta(property="og:type" content="website")
+        meta(property="og:url" content= "http://digital-banana.ru/")
+        meta(name="yandex-verification" content="e0a4b2c7ceaacc9f")
+
+        include partials/head-scripts.jade
+    body
+        include partials/header.jade
+        #vk_community_messages
+        script(type="text/javascript").
+            VK.Widgets.CommunityMessages("vk_community_messages", 54916180, {expandTimeout: "30000",tooltipButtonText: "Ответим на любые вопросы"});
+        .hero.hero-first
+            .container
+                .main-logo
+                a.bananatag(target="_blank" href="https://www.instagram.com/digital_banana/").ga_bananatag #DIGITALBANANA
+                .socials
+                    a.social__vk(target="_blank" href="https://vk.com/digital_banana").ga_vk vk
+                    a.social__fb(target="_blank" href="https://www.facebook.com/digitalbananaschool/").ga_fb f
+                    a.social__inst(target="_blank" href="https://www.instagram.com/digital_banana/").ga_ins ins
+
+                .feedBackWrapper.form-person.is-closed.container
+                    .form-exit
+                    .content
+                        .wrapper-left.wrapper-left_form
+                        .wrapper-right.wrapper-right_form
+                            h2
+                                | Заявка
+                                br
+                                | на курс
+                        .wrapper-left.wrapper-left_form
+                            h4.form-title Телефон для связи
+                            input.isrequired.input(type="text" placeholder="phone")
+                            h4.form-title Контактная почта
+                            input.isrequired.input(type="text" placeholder="mail")
+                            h4.form-title Возраст ребенка
+                            input.isrequired.hidden.age-input.isrequired(type="text" placeholder="age")
+                            ul.age-picker
+                                li 13
+                                li 14
+                                li 15
+                                li 16
+                                li 17
+
+                        .wrapper-right.wrapper-right_form
+                            h4.form-title Выберите интересующий курс
+                            .dropdown.is-closed
+                                input.isrequired.dropdown-input.hidden(type="text" placeholder="курс вашей мечты")
+                                .dropdown-toggle
+                                ul.dropdown-menu.is-hidden
+                                    li Разработка сайтов
+                                    li Основы ООП
+                                    //li Мобильная разработка
+                                    //li Машинное обучение
+                                    li Создание 2D игр
+                                    li Дизайн игровых уровней
+                                    li Концепт-арт
+
+                                    //li Основы программирования
+                                    //li Компьютерная математика
+                                    //li Игровая разработка
+                            h4.form-title Фио ребенка
+                            input.isrequired.input.input__parent(type="text" placeholder="kidName")
+                            h4.form-title Фио родителя
+                            input.isrequired.input(type="text" placeholder="parentName")
+                            .terms
+                                .desc Я соглашаюсь на обработку моих персональных данных
+                                    .checkbox
+                                input.isrequired.hidden.check(type="checkbox")
+                                br
+                                a(href="/license.pdf" target="_blank") Политика конфеденциальности Digital Banana
+                            .ajaxgo Отправить форму
+
+                .successmsg
+                    .successmsg-title Ваша заявка принята!
+                    .successmsg-desc В ближайшее время мы свяжемся с вами!
+                    img(src="./assets/img/roll.png")
+
+                .content
+                    .content-header.banana-keeper
+                        h1
+                            | Digital
+                            br
+                            | Banana
+                            span Online
+                    .content-left
+                    .content-right
+                        h3.hero-main_about
+                            | Онлайн-версия курсов Digital Banana по&ensp;
+                            a.hero-main_about_link_it(href="#courses") IT
+                            |  и&ensp;
+                            a.hero-main_about_link_gamedev(href="#courses") Gamedev
+                            |  для школьников 13-17 лет со всей России
+
+                        a.main-btn.js-formBtn Оставить заявку на бесплатный открытый урок
+                        //a.main-btn(href="/events" target="_blank") Расписание ближайших занятий
+
+
+
+                    a(href="#courses").bottom-link Узнайте больше
+
+        include partials/contacts.jade
+
+        include partials/body-scripts.jade

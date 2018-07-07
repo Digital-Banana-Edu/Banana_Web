@@ -55,9 +55,7 @@
     display: block;
     width: 100%;
     padding: 10px 0;
-    background: linear-gradient($yellow 50%, $green 50%);
-    background-size: 200%;
-    background-position-y: 0;
+    background-color: $yellow;
     text-align: center;
     font-size: 0.9rem;
     z-index: 10;
@@ -68,7 +66,7 @@
       padding: 10px 20px;
 
       &:hover {
-        background-position-y: 100%; 
+        background-color: $green;
       }
     }
 
