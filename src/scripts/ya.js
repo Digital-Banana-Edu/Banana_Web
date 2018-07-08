@@ -2,4 +2,4 @@
 
 $(document).on('yaCounter42684644.inited', function() {
   console.log('common');
-})
+});
