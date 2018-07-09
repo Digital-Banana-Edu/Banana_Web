@@ -210,9 +210,9 @@ function prepareQuestionData(question) {
     } else {
         testHeader.html('<h1>' + question.text + '</h1>');
 
-        testBody.html('<p>Круто — это отличное направление! Бла-бла-бла.</p>' +
-            '<p>Запишитесь на курс или пройдите тест еще раз!</p>' +
-            '<a class="ui-btn test__btn" href="/' + question.linkTo + '">Записаться на курс</a>' +
+        testBody.html('<p class="test__text">Круто — это отличное направление! Бла-бла-бла.</p>' +
+            '<p class="test__text">Запишитесь на курс или пройдите тест еще раз!</p>' +
+            '<a class="ui-btn test__btn" href="/' + question.linkTo + '">Подробнее о курсе</a>' +
             '<div class="ui-btn test__btn js-positiveAnswer">Пройти заново</div>');
 
         currentPositive = 'start';

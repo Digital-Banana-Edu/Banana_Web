@@ -1,0 +1,130 @@
+.course-map {
+  margin-bottom: 30px;
+  $this: &;
+
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media screen and (min-width: 560px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    margin-bottom: 45px;
+
+    &:hover {
+      #{$this}__icon {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &__icon {
+    background-color: $yellow;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 25px;
+    transition: .2s;
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__name {
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 20px;
+  }
+
+  &__btn {
+    padding: 10px;
+    background-color: $yellow;
+  }
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 85%;
+  background-color: $yellow;
+  z-index: 999;
+  transition: .3s ease-out;
+  transform: translateX(-100%);
+  padding: 0 15px;
+
+  @media screen and (min-width: 768px) {
+    padding: 0 30px;
+    width: 50%;
+  }
+
+
+  &.-active {
+    transform: translateX(0);
+  }
+
+  &__icon {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 40px;
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: 30px;
+    text-align: center;
+  }
+
+  &__text {
+    margin-bottom: 20px;
+  }
+
+  &__exit {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    transition: .3s ease-out;
+
+    &:hover {
+      transform: rotate(90deg);
+    }
+
+    &:before,
+    &:after {
+      position: absolute;
+      display: block;
+      content: '';
+      top: 7px;
+      left: -2px;
+      width: 20px;
+      height: 1px;
+      background-color: black;
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+}

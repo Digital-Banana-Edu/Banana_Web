@@ -30,6 +30,7 @@
 @import 'components/testimonials';
 @import "components/timepad";
 @import "components/test";
+@import "components/map/map";
 @import "../../node_modules/font-awesome/scss/font-awesome.scss";
 
 #vk_community_messages {
@@ -41,6 +42,10 @@
   position: absolute;
   top: 60px;
   left: 32px;
+}
+
+.hero-main_about.mb-0 {
+  margin-bottom: 0 !important;
 }
 
 .bananatag {
