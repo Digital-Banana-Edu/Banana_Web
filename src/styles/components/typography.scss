@@ -24,6 +24,12 @@ h1, h2 {
   font-size: 14px;
   line-height: 19px;
 
+  &.-selected-yellow {
+    //border-top: 2px solid $yellow;
+    display: inline-block;
+    padding: 10px 0;
+  }
+
   a {
     text-decoration: underline;
   }
@@ -45,5 +51,9 @@ h1, h2 {
   @include bp(1200) {
     font-size: 27px;
     line-height: 33px;
+
+    &.-selected-yellow {
+      font-size: 20px;
+    }
   }
 }

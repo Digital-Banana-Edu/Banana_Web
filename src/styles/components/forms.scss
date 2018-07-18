@@ -245,6 +245,10 @@ input.hidden {
       background-color: $green;
     }
   }
+
+  &.-no-top {
+    margin-top: 0;
+  }
 }
 
 ::-webkit-input-placeholder {color:$yellow;}

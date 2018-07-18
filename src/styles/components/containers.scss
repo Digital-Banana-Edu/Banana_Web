@@ -18,6 +18,12 @@ body {
 .content,
 .container {
   margin: 0 auto;
+
+  &.mb-30 {
+    @media screen and (min-width: 768px) {
+      margin-bottom: 30px;
+    }
+  }
 }
 
 .hero {
@@ -177,6 +183,8 @@ section {
 }
 
 .section-courses {
+  align-items: flex-start;
+
   @include lp(520) {
     padding-bottom: 20px !important;
   }
