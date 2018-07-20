@@ -28,7 +28,7 @@ var config = {
   pages: './src/pages/*.jade',
   blog: './src/pages/blog/*.jade',
   templates: './src/templates/*.jade',
-  images: './src/images/*',
+  images: './src/images/**/*',
   fonts: './src/fonts/*',
   sprite: './src/icons/*.png'
 };

@@ -66,4 +66,31 @@
     margin-bottom: 15px;
   }
 
+  &__icon {
+    float: left;
+    width: 100px;
+    height: 100px;
+    background-color: $yellow;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    margin-bottom: 15px;
+
+    img {
+      max-width: 50px;
+    }
+  }
+
+  &__pics {
+    position: relative;
+  }
+
+  &__pic {
+    position: absolute;
+    max-width: 85%;
+    top: -142px;
+  }
+
 }

@@ -1,29 +1,28 @@
 doctype html
 html
-    head
-        meta(charset="utf-8")
-        meta(name="viewport" content="width=device-width, initial-scale=1")
-        link(rel="stylesheet" href="../assets/css/main.css")
-        link(rel="shortcut icon" href="assets/img/favicon.png")
-        block title
-        block meta-content
-        include partials/head-scripts.jade
-    body
-        a.back-btn(href="/")
-        .container
-            .test
-                .test__header
-                    h1.test__title Тест:
-                    h2.test__subtitle Какая профессия вам больше подходит
-                    //h4.test___question Интересно ли вам создавать компьютерные игры?
-                .test__body
-                    //.test__actions
-                    //    .ui-btn.test__btn.js-negativeAnswer Нет
-                    //    .ui-btn.test__btn.js-positiveAnswer Да
-                    .test__text
-                        | Пройдите тест и узнайте, какой из курсов Digital Banana будет интереснее для вас
-                        span.test__extratext  (меньше 5 минут)
-                    .btn.main-btn.js-startBtn Приступить!
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="stylesheet" href="../assets/css/main.css")
+    link(rel="shortcut icon" href="assets/img/favicon.png")
+    block title
+    block meta-content
+    include partials/head-scripts.jade
+  body
+    a.back-btn(href="/")
+    section.section-test
+      .container
+        .content.js-content
+          .test
+            .test__header
+              h1.test__title Тест:
+              h2.test__subtitle Какая профессия вам больше подходит
+            .test__body
+              .test__text
+                | Пройдите тест и узнайте, какой из курсов Digital Banana будет интереснее для вас
+                span.test__extratext  (меньше 5 минут)
+              .btn.main-btn.js-startBtn Приступить!
 
 
-        include partials/body-scripts.jade
+
+    include partials/body-scripts.jade

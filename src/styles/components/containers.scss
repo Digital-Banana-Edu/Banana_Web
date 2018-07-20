@@ -173,6 +173,7 @@ section {
   align-items: center;
   min-height: 100vh;
 
+  &:not(.section-test),
   &:not(.section-main) {
     padding: 50px 0 0;
   }
@@ -180,6 +181,10 @@ section {
   @include bp(1024) {
     min-height: 100vh;
   }
+}
+
+.section-test {
+  padding-top: 0!important;
 }
 
 .section-courses {
