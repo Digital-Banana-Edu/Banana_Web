@@ -111,6 +111,13 @@
   }
 
   &-teacher-top,
+  &-teacher-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  &-teacher-top,
   &-price-top {
     @include lp(769) {
       display: none;
@@ -174,6 +181,91 @@
   @include lp(520) {
     .container {
       padding: 40px 10px;
+    }
+  }
+}
+
+.teacher-slider {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  margin-bottom: 10px;
+
+  @media screen and (max-width: 768px) {
+    width: 500px;
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 355px;
+  }
+
+  @media screen and (max-width: 374px) {
+    width: 290px;
+  }
+
+  &:before {
+    position: absolute;
+    display: block;
+    content: 'Следующий преподаватель';
+
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #565656;
+    font-size: 11px;
+    text-align: center;
+  }
+
+  .about-desc {
+    margin-bottom: 50px;
+  }
+
+  .slick-arrow {
+    position: absolute;
+    bottom: -0;
+    border: none;
+    content: '';
+    width: 17px;
+    height: 14px;
+    color: transparent;
+    cursor: pointer;
+    background-color: transparent;
+
+    outline: none;
+
+    &:before {
+      position: absolute;
+      display: block;
+      content: '';
+
+      width: 6px;
+      height: 6px;
+    }
+
+    &.slick-next {
+      right: 5px;
+
+      &:before {
+        @include icon(left-arrow);
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: .5s;
+        transform: rotate(180deg);
+      }
+    }
+
+    &.slick-prev {
+      left: 5px;
+      z-index: 9;
+
+      &:before {
+        @include icon(left-arrow);
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: .5s;
+      }
     }
   }
 }

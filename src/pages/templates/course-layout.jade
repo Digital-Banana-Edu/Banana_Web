@@ -14,12 +14,9 @@ html
 
     #vk_community_messages
     script(type="text/javascript").
-      VK.Widgets.CommunityMessages("vk_community_messages", 54916180, {expandTimeout: "30000",tooltipButtonText: "Ответим на любые вопросы"});
+        VK.Widgets.CommunityMessages("vk_community_messages", 54916180, {expandTimeout: "50000",disableExpandChatSound: "1",tooltipButtonText: "Ответим на любые вопросы"});
     
-    .socials
-      a.social__vk(target="_blank" href="https://vk.com/digital_banana") vk
-      a.social__fb(target="_blank" href="https://www.facebook.com/digitalbananaschool/") f
-      a.social__inst(target="_blank" href="https://www.instagram.com/digital_banana/") ins
+    include ../partials/socials.jade
 
     .successmsg
       .successmsg-title Ваша заявка принята!
@@ -64,13 +61,4 @@ html
             script(type="text/javascript").
               document.write(VK.Share.button(false,{type: "round", text: "Поделиться"})); 
 
-    //
-    //
-    //    a(href="#about_leto").bottom-link.bottom-link-leto Узнайте больше
-    //
-    //section.section-course#about_leto
-    //  .container
-    //    include ../partials/about_leto.jade
-
     include ../partials/body-scripts.jade
-    

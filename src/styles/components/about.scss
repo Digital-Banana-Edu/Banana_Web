@@ -1,4 +1,4 @@
-.about-slider-container {
+.slider-container {
   padding-top: 30px;
   width: 100%;
 
@@ -19,7 +19,8 @@
   }
 
   &-photo-nav {
-    margin: 0 10px;
+    //margin: 0 10px;
+    padding: 0 2px;
 
     &:focus {
       outline: none;
@@ -59,7 +60,7 @@
   }
 }
 
-.wrapper-left {
+.wrapper-left:not(.test-page) {
   .about-desc,
   .about-title {
     @include bp(768) {
@@ -68,7 +69,7 @@
   }
 }
 
-.wrapper-right {
+.wrapper-right:not(.test-page) {
   .about-desc,
   .about-title {
     @include lp(768) {

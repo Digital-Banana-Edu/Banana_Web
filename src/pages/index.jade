@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title Digital Banana - курсы программирования для школьников
+    title Digital Banana - компьютерные курсы для школьников | курсы по программированию
     meta(charset="utf-8")
     meta(name="viewport" content="width=device-width, initial-scale=1")
     meta(name="google-site-verification" content="A8xv1M353T6Z4wN29JtemIWpEzuqTafga1F87qYW1cw")
@@ -20,15 +20,12 @@ html
     include partials/header.jade
     #vk_community_messages
     script(type="text/javascript").
-      VK.Widgets.CommunityMessages("vk_community_messages", 54916180, {expandTimeout: "30000",tooltipButtonText: "Ответим на любые вопросы"});
+        VK.Widgets.CommunityMessages("vk_community_messages", 54916180, {expandTimeout: "50000",disableExpandChatSound: "1",tooltipButtonText: "Ответим на любые вопросы"});
     .hero.hero-first
       .container
         .main-logo
         a.bananatag(target="_blank" href="https://www.instagram.com/digital_banana/").ga_bananatag #DIGITALBANANA
-        .socials
-          a.social__vk(target="_blank" href="https://vk.com/digital_banana").ga_vk vk
-          a.social__fb(target="_blank" href="https://www.facebook.com/digitalbananaschool/").ga_fb f
-          a.social__inst(target="_blank" href="https://www.instagram.com/digital_banana/").ga_ins ins
+        include ./partials/socials.jade
         .feedBackWrapperFree.form-person.is-closed.container
           .form-exit-free
           .content
@@ -148,6 +145,7 @@ html
 
 
           a(href="#courses").bottom-link Узнайте больше
+    //include partials/teachers.jade
     include partials/courses.jade
     //include partials/map.jade
     include partials/about.jade

@@ -52,20 +52,24 @@ var testData = [
         isFinal: true,
         icon: 'gamecoding',
         pics: [
-            'concept-3'
+            'gamecoding-1',
+            'gamecoding-2',
+            'gamecoding-3'
         ],
         linkTo: 'gamecoding'
     },
     {
         id: 'itOopFinal',
-        name: 'Основы объектно-ориентированного программирования',
+        name: 'Основы ООП',
         desc: 'Для того, чтобы стать хорошим программистом необходимо ' +
-        'изучить основы объектно ориентированного программирования — ' +
+        'изучить основы объектно-ориентированного программирования — ' +
         'это хороший старт для дальнейшего изучения любой области IT.',
         isFinal: true,
         icon: 'oop',
         pics: [
-            'concept-3'
+            'oop-1',
+            'oop-2',
+            'oop-3'
         ],
         linkTo: 'oop'
     },
@@ -77,7 +81,9 @@ var testData = [
         isFinal: true,
         icon: 'gamedev',
         pics: [
-            'concept-3'
+            'gamedev-1',
+            'gamedev-2',
+            'gamedev-3'
         ],
         linkTo: 'game-development'
     },
@@ -107,7 +113,9 @@ var testData = [
         isFinal: true,
         icon: 'concept',
         pics: [
-            'concept-3'
+            'concept-1',
+            'concept-3',
+            'concept-2'
         ],
         linkTo: 'concept-art'
     },
@@ -119,7 +127,9 @@ var testData = [
         isFinal: true,
         icon: 'level',
         pics: [
-            'concept-3'
+            '3d-1',
+            '3d-2',
+            '3d-3'
         ],
         linkTo: 'level-design'
     },
@@ -140,7 +150,9 @@ var testData = [
         isFinal: true,
         icon: 'level',
         pics: [
-            'concept-3'
+            'level-1',
+            'level-2',
+            'level-3'
         ],
         linkTo: 'level-design'
     },
@@ -174,13 +186,14 @@ var testData = [
     },
     {
         id: 'itMLFinal',
-        name: 'Специалист по машинному обучению',
+        name: 'Машинное обучение',
         desc: 'Это специалист, который занимается обработкой и анализом большого количества информации. ' +
         'Строит на ее основе прогнозы и гипотезы.',
         isFinal: true,
         icon: 'ml',
         pics: [
-            'concept-3'
+            'ml-1',
+            'ml-2'
         ],
         linkTo: 'data-science'
     },
@@ -203,7 +216,9 @@ var testData = [
         isFinal: true,
         icon: 'design',
         pics: [
-            'concept-3'
+            'design-1',
+            'design-2',
+            'design-3'
         ],
         linkTo: 'design'
     },
@@ -219,7 +234,8 @@ var testData = [
     },
     {
         id: 'itFrontOrBack',
-        text: 'Для вас интереснее делать анимированные иконки, крутые кнопки и слайдеры или вас больше интересует работа сайта изнутри - работа с базами данных и сервером?',
+        text: 'Для вас интереснее делать анимированные иконки, ' +
+        'крутые кнопки и слайдеры или вас больше интересует работа сайта изнутри - работа с базами данных и сервером?',
         isFinal: false,
         positiveValue: 'Внешняя часть',
         negativeValue: 'Внутренняя часть',
@@ -234,7 +250,8 @@ var testData = [
         isFinal: true,
         icon: 'front',
         pics: [
-            'concept-3'
+            'web-1',
+            'web-2'
         ],
         linkTo: 'web'
     },
@@ -247,20 +264,22 @@ var testData = [
         isFinal: true,
         icon: 'back',
         pics: [
-            'concept-3'
+            'web-1',
+            'web-2'
         ],
         linkTo: 'back'
     },
     {
         id: 'itMobileFinal',
-        name: 'Мобильный разработчик Android',
+        name: 'Android разработчик',
         desc: 'Это специалист, разрабатывающий приложения для различных мобильных устройств. ' +
         'Профессия на данный момент одна из самых перспективных и востребованных, ' +
         'ведь количество мобильных устройств каждый день увеличивается.',
         isFinal: true,
         icon: 'android',
         pics: [
-            'concept-3'
+            'mobile-1',
+            'mobile-2'
         ],
         linkTo: 'android'
     }
@@ -294,20 +313,35 @@ function getQuestionById(id) {
 
 function showFinalMarkup(course) {
     var finalMarkup =
-        '<div class="content-header"><h2>' + course.name + '</h2></div>' +
-        '<div class="content-left">' + prepareImages(course.pics) + '</div>' +
-        '<div class="content-right">' + prepareCourseInfo(course) + '</div>';
+        '<div class="wrapper-left test-page slider-container">' +
+            '<div class="about-photos">' + prepareImages(course.pics) + '</div>' +
+            '<div class="about-photos-nav">' + prepareNavImages(course.pics) + '</div>' +
+        '</div>' +
+        '<div class="wrapper-right test-page">' +
+            '<h1 class="test__result-header">' + course.name + '</h1>' + prepareCourseInfo(course) +
+        '</div>';
 
     content.html(finalMarkup);
+    getSliderToWork();
 }
 
 function prepareImages(pics) {
-    var result = '<div class="test__pics">';
+    var result = '';
     pics.forEach(function (pic, index) {
-        result += '<img class="test__pic -num-' + index + '" src="./assets/img/test-pics/test-' + pic + '.jpg">'
+        result += '<div class="about-nav">' +
+            '<img src="./assets/img/test-pics/test-' + pic + '.jpg">' +
+            '</div>'
     });
-    result += '</div>';
+    return result;
+}
 
+function prepareNavImages(pics) {
+    var result = '';
+    pics.forEach(function (pic, index) {
+        result += '<div class="about-photo-nav">' +
+            '<img src="./assets/img/test-pics/test-' + pic + '.jpg">' +
+            '</div>';
+    });
     return result;
 }
 
@@ -315,8 +349,8 @@ function prepareCourseInfo(course) {
     return '<div class="about-desc">' + course.desc + '</div>' +
         '<div class="about-title">Запишитесь на курс или пройдите тест еще раз</div>' +
         '<div class="ui-btn-container">' +
-            '<a class="ui-btn test__btn" href="/' + course.linkTo + '">Подробнее о курсе</a>' +
-            '<div class="ui-btn test__btn js-restartPage">Пройти заново</div>' +
+            '<a class="ui-btn test__btn -final" href="/' + course.linkTo + '">Подробнее о курсе</a>' +
+            '<div class="ui-btn test__btn js-restartPage -final">Пройти заново</div>' +
         '</div>';
 }
 
@@ -330,6 +364,28 @@ function setVariablesAndInteractions() {
 
     testBody.on('click', '.js-negativeAnswer', function () {
         prepareQuestionData(getQuestionById(currentNegative));
+    });
+}
+
+function getSliderToWork() {
+    $('.about-photos').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.about-photos-nav'
+    });
+
+    $('.about-photos-nav').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        asNavFor: '.about-photos',
+        dots: false,
+        centerMode: true,
+        focusOnSelect: true,
+        centerPadding: '10px',
+        adaptiveHeight: true,
+        arrows: false
     });
 }
 

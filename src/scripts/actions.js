@@ -289,4 +289,12 @@ $(document).ready(function() {
     }
   }, 1500);
 
+  if ($('.teacher-slider')) {
+      $('.teacher-slider').slick({
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          fade: true
+      });
+  }
+
 });

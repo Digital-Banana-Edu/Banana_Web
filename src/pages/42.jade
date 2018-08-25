@@ -1,7 +1,10 @@
 doctype html 
 html
 	head
-		title Donate 42 MeetUp
+		title Donate 42Meetup
 		meta(charset="UTF-8")
-	body(style="margin: 0; min-height: 100vh; display: flex; justify-content: center; align-items: center;")
-		iframe(src="https://money.yandex.ru/quickpay/shop-widget?writer=seller&targets=%D0%9F%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D1%82%D1%8C%2042%20MeetUp&targets-hint=&default-sum=&button-text=14&payment-type-choice=on&hint=&successURL=&quickpay=shop&account=410015233338448" width="450" height="213" frameborder="0" allowtransparency="true" scrolling="no")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+	body(style="margin: 0; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;")
+		img(style="max-width: 100%; margin-bottom: 15px;" src="assets/img/computerra.png")
+		div(style="background-color: #f4f4f4; padding: 10px; width: 100%; max-width: 470px; box-sizing: border-box;")
+			iframe(src="https://money.yandex.ru/quickpay/shop-widget?writer=seller&targets=%D0%9F%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D1%82%D1%8C%2042Meetup&targets-hint=&default-sum=&button-text=14&payment-type-choice=on&hint=&successURL=&quickpay=shop&account=410015233338448" style="width: 100%; max-width: 450px;" height="213" frameborder="0" allowtransparency="true" scrolling="no")

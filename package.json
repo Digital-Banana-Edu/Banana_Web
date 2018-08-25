@@ -6,7 +6,8 @@
   "dependencies": {
     "debug": "^3.1.0",
     "font-awesome": "^4.7.0",
-    "jade": "^1.11.0"
+    "jade": "^1.11.0",
+    "owl.carousel": "^2.3.4"
   },
   "devDependencies": {
     "browserify": "^13.3.0",
