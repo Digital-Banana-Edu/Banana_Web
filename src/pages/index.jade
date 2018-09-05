@@ -67,7 +67,6 @@ html
               h4.form-title Возраст ребенка
               input.isrequired.hidden.age-input.isrequired(type="text" placeholder="age")
               ul.age-picker
-                li 10
                 li 11
                 li 12
                 li 13
@@ -83,15 +82,18 @@ html
                 .dropdown-toggle
                 ul.dropdown-menu.is-hidden
                   li Разработка сайтов
+                  li Серверная разработка
                   li Мобильная разработка
                   li Машинное обучение
-                  li Игровая разработка
+                  li Дизайн
+                  li Игровая разработка 14-17
                   li Дизайн игровых уровней
                   li Концепт-арт
                   li Основы ООП
-                  //li Основы программирования
-                  //li Компьютерная математика
-                  li Игровая разработка
+                  li Олимпиадное программирование
+                  li Олимпиадная математика
+                  li Игровая разработка 11-13
+
               h4.form-title Фио ребенка
               input.isrequired.input.input__parent(type="text" placeholder="kidName")
               h4.form-title Фио родителя
@@ -103,12 +105,6 @@ html
                 br
                 a(href="/license.pdf" target="_blank") Политика конфеденциальности Digital Banana
               .ajaxgo Отправить форму
-              
-
-        //- a.form-btn.form-btn__maillist(target="_blank" href="http://eepurl.com/b2Jj35").ga_subscribe
-        //-   | подписаться
-        //-   br
-        //-   | на рассылку
 
         .successmsg
           .successmsg-title Ваша заявка принята!
@@ -128,29 +124,21 @@ html
               a.hero-main_about_link_it(href="#courses") IT
               |  и 
               a.hero-main_about_link_gamedev(href="#courses") Gamedev
-              |  для школьников 10-17 лет
-              //- a.hero-main_about_link_small(href="#courses") кружки
-              //- |  для 10-13 лет, 
-              //- a(href="http://digitaljungle.ru/" target="_blank") мероприятия
-              //- | ,
-              //- br
-              //- a(href="https://newtonew.com/tech/digital-banana-hackathon" target="_blank") хакатоны
-              //- |  и 
-              //- a(href="/leto" target="_blank") Летняя ИТ-программа
+              |  для школьников 11-17 лет
               | . Тут находят друзей, создают команды и запускают первые IT-проекты
 
-            a.main-btn.js-freeBtn Записаться на бесплатный урок
-            //a.main-btn(href="/events" target="_blank") Расписание ближайших занятий
+            a.main-btn(target="_blank" href="/test") Профориентационный тест
+            //div
+            //  a.main-btn.mr-2(target="_blank" href="https://docs.google.com/spreadsheets/d/1Kz1dRIFiIWgmvrp9NyT5lwZl5E8tSwXwSVtbX2g5cSM/edit?usp=sharing") Расписание
+              //a.main-btn(href="/events" target="_blank") Открытые уроки
 
 
 
           a(href="#courses").bottom-link Узнайте больше
-    //include partials/teachers.jade
     include partials/courses.jade
-    //include partials/map.jade
     include partials/about.jade
-    
-    //- include partials/testimonials.jade
+    //include partials/testimonials.jade
+
     include partials/projects.jade
     include partials/partners.jade
     include partials/contacts.jade

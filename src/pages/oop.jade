@@ -1,57 +1,61 @@
 extends ./templates/course-layout.jade
 
 block title
-    title Основы ООП
+  title Основы ООП
 
 block meta-content
-    meta(property="og:title" content="Основы ООП")
-    meta(property="og:image" content="assets/img/share_img.png")
-    meta(property="og:url" content= "http://digital-banana.ru/2dgames")
-    meta(name="yandex-verification" content="e0a4b2c7ceaacc9f")
+  meta(property="og:title" content="Основы ООП")
+  meta(property="og:image" content="assets/img/share_img.png")
+  meta(property="og:url" content= "http://digital-banana.ru/2dgames")
+  meta(name="yandex-verification" content="e0a4b2c7ceaacc9f")
 
 block form-dropdown
-    h4.form-title Курс
-    input.hidden(value="OOP" placeholder="Курс")
-    .course-name_placeholder Основы ООП
+  h4.form-title Курс
+  input.hidden(value="OOP" placeholder="Курс")
+  .course-name_placeholder Основы ООП
 
 block form-age
-    ul.age-picker
-        li 11*
-        li 12
-        li 13
+  ul.age-picker
+    li 11*
+    li 12
+    li 13
 
 block teacher
-    .teacher-photo
-        img(src="assets/img/teachers/teacher-oop.jpg")
-    .about-title Бирилло Анастасия
-    .about-desc Full-stack разработчик (в настоящее время разарботка своей web-платформы), выпускница мат-меха СПбГУ, студентка Computer Science Center, в прошлом Front-End разработчик.
+  .teacher-photo
+    img(src="assets/img/teachers/teacher-oop.jpg")
+  .about-title Бирилло Анастасия
+  .about-desc Full-stack разработчик (в настоящее время разарботка своей web-платформы), выпускница мат-меха СПбГУ, студентка Computer Science Center, в прошлом Front-End разработчик.
 
 block course
-    h1 Основы ООП
-    h2 C# / Программирование / Алгоритмы и структуры данных
+  h1 Основы ООП
+  h2 C# / Программирование / Алгоритмы и структуры данных
 
-    .about-desc IT-рынок нуждается в хороших программистах. Курс по основам программирования поможет вашему ребенку начать программировать.
-    .about-desc Ребята изучат основы программирования на языке C#, овладеют принципами объектно ориентированного программирования, а в конце года изучат структуры данных и алгоритмы для работы с ними. Эти знания станут хорошей базой для любого вида разработки в будущем.
-    .about-desc В течение курса ребята создадут несколько своих проектов - крестики нолики, змейку, морской бой, шифратор и калькулятор с использованием алгоритма обратной польской записи. А также узнают, что такое матрицы, как работать с ними и познакомятся в игровой форме с важными понятиями из мира ИТ, такими как двоичная система счисления и сложность алгоритмов.
+  .about-desc IT-рынок нуждается в хороших программистах. Курс по основам программирования поможет вашему ребенку начать программировать.
+  .about-desc Ребята изучат основы программирования на языке C#, овладеют принципами объектно ориентированного программирования, а в конце года изучат структуры данных и алгоритмы для работы с ними. Эти знания станут хорошей базой для любого вида разработки в будущем.
+  .about-desc В течение курса ребята создадут несколько своих проектов - крестики нолики, змейку, морской бой, шифратор и калькулятор с использованием алгоритма обратной польской записи. А также узнают, что такое матрицы, как работать с ними и познакомятся в игровой форме с важными понятиями из мира ИТ, такими как двоичная система счисления и сложность алгоритмов.
 
-    a.ui-btn.-primary.-programm(href="/programs/oop_program.jpg" target="_blank") Посмотреть программу
+  a.ui-btn.-primary.-programm(href="/programs/oop_program.jpg" target="_blank") Посмотреть программу
 
 block price
-    .about-desc.-less-margin Стоимость в месяц
-    .about-title 6 000 рублей
+  .about-desc.-less-margin Стоимость в месяц
+  .about-title 6 000 рублей
 
 block details
-    .about-desc Умение пользоваться компьютером
-    .about-title
-        | Возраст:
-        span 12-13 лет
-    .about-title
-        | Старт курса:
-        span сентябрь 2018
-    .about-title
-        | Длительность:
-        span 1 год
-    .about-title
-        | Расписание:
-        span.date вс
-        span 14:30 - 17:30
+  .about-desc Умение пользоваться компьютером
+  .about-title
+    | Возраст:
+    span 12-13 лет
+  .about-title
+    | Старт курса:
+    span сентябрь 2018
+  .about-title
+    | Длительность:
+    span 1 год
+  .about-title
+    | Расписание 1 группы:
+    span.date вс
+    span 12:00 - 15:00
+  .about-title
+    | Расписание 2 группы:
+    span.date вс
+    span 15:00 - 18:00

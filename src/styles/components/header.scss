@@ -58,8 +58,26 @@
     }
   }
 
+  &-lang {
+    position: relative;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: .2s;
+
+    img {
+      border: 1px solid #f4f4f4;
+      width: 18px;
+    }
+
+    &.-active {
+      cursor: default;
+
+    }
+  }
+
   &-contacts {
     float: right;
+    padding-right: 30px;
 
     @include lp(745) {
       float: left;
@@ -67,6 +85,10 @@
 
     @include lp(1024) {
       padding-right: 15px;
+    }
+
+    a {
+      padding: 0;
     }
   }
 

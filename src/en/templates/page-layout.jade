@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="stylesheet" href="../../assets/css/main.css")
+    link(rel="shortcut icon" href="assets/img/favicon.png")
+    block title
+    block meta-content
+    include ../partials/head-scripts.jade
+  body
+    include ../partials/header.jade
+
+    block content
+
+    include ../partials/contacts.jade
+    include ../partials/body-scripts.jade

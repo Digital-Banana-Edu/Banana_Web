@@ -26,6 +26,18 @@ body {
   }
 }
 
+.content.-en-mobile {
+  @include lp(500) {
+    padding-top: 100px;
+
+    .banana-keeper {
+      &:before {
+        top: -100px;
+      }
+    }
+  }
+}
+
 .hero {
   min-height: 100vh;
 }

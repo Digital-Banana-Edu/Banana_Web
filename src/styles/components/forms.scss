@@ -246,8 +246,16 @@ input.hidden {
     }
   }
 
+  @include lp(768) {
+    font-size: 1rem;
+  }
+
   &.-no-top {
     margin-top: 0;
+  }
+
+  &.mr-2 {
+    margin-right: 20px;
   }
 }
 

@@ -1,0 +1,138 @@
+doctype html
+html
+  head
+    title Digital Banana - computer courses for high-school kids | programming courses
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    meta(name="google-site-verification" content="A8xv1M353T6Z4wN29JtemIWpEzuqTafga1F87qYW1cw")
+    link(rel="stylesheet" href="../assets/css/main.css")
+    link(rel="shortcut icon" href="../assets/img/favicon.png")
+
+    meta(property="og:title" content="Digital Banana - coding courses for high-school kids")
+    meta(property="og:description" content="Courses, events, meetings with market professional. We do everything to help our student integrate into current market and see the whole picture.")
+    meta(property="og:image" content="assets/img/share_img.png")
+    meta(property="og:type" content="website")
+    meta(property="og:url" content= "http://digital-banana.ru/")
+    meta(name="yandex-verification" content="e0a4b2c7ceaacc9f")
+
+    include ../pages/partials/head-scripts.jade
+  body
+    include partials/header.jade
+    #vk_community_messages
+    script(type="text/javascript").
+        VK.Widgets.CommunityMessages("vk_community_messages", 54916180, {expandTimeout: "50000",disableExpandChatSound: "1",tooltipButtonText: "How may we help?"});
+    .hero.hero-first
+      .container
+        .main-logo
+        a.bananatag(target="_blank" href="https://www.instagram.com/digital_banana/").ga_bananatag #DIGITALBANANA
+        include ./partials/socials.jade
+
+        .feedBackWrapper.form-person.is-closed.container
+          .form-exit
+          .content
+            .wrapper-left.wrapper-left_form
+            .wrapper-right.wrapper-right_form
+              h2
+                | Pick
+                br
+                | a course
+            .wrapper-left.wrapper-left_form
+              h4.form-title Phone number
+              input.isrequired.input(type="text" placeholder="phone")
+              h4.form-title E-mail
+              input.isrequired.input(type="text" placeholder="mail")
+              h4.form-title Child Age
+              input.isrequired.hidden.age-input.isrequired(type="text" placeholder="age")
+              ul.age-picker
+                li 11
+                li 12
+                li 13
+                li 14
+                li 15
+                li 16
+                li 17
+
+            .wrapper-right.wrapper-right_form
+              h4.form-title Pick a course
+              .dropdown.is-closed
+                input.isrequired.dropdown-input.hidden(type="text" placeholder="your dream course")
+                .dropdown-toggle
+                ul.dropdown-menu.is-hidden
+                  li Fronend development
+                  li Backend development
+                  li Mobile development
+                  li Machine learning
+                  li Design
+                  li Game development 14-17
+                  li Level design
+                  li Concept-art
+                  li Game development 11-13
+                  li OOP basics
+                  li IT English
+                  li Olympiad programming
+                  //li Olympiad math
+                  li Summer camp
+
+              h4.form-title Student's full name
+              input.isrequired.input.input__parent(type="text" placeholder="kidName")
+              h4.form-title Parent's full name
+              input.isrequired.input(type="text" placeholder="parentName")
+              .terms
+                .desc I'm ok with my data being used by Digital Banana managers
+                  .checkbox
+                input.isrequired.hidden.check(type="checkbox")
+                br
+                a(href="/license.pdf" target="_blank") Digital Banana Terms And Privacy
+              .ajaxgo Finish it adn get a course
+              
+
+        //- a.form-btn.form-btn__maillist(target="_blank" href="http://eepurl.com/b2Jj35").ga_subscribe
+        //-   | подписаться
+        //-   br
+        //-   | на рассылку
+
+        .successmsg
+          .successmsg-title Your choice is approved!
+          .successmsg-desc We will contact you soon!
+          img(src="./assets/img/roll.png")
+
+        .content.-en-mobile
+          .content-header.banana-keeper
+            h1
+              | Digital
+              br
+              | Banana
+          .content-left
+          .content-right
+            h3.hero-main_about
+              a.hero-main_about_link_it(href="#courses") IT
+              |  and&nbsp;
+              a.hero-main_about_link_gamedev(href="#courses") Gamedev
+              |  &nbsp;courses and events
+              br
+              | for schoolchildren 11-17 years old.
+              br
+              | Here they find friends,
+              br
+              | create teams and launch
+              br
+              | their first IT projects
+
+
+            //a.main-btn.js-freeBtn Записаться на бесплатный урок
+            //a.main-btn(href="/events" target="_blank") Расписание ближайших занятий
+
+
+
+          a(href="#courses").bottom-link Find out more
+    //include partials/teachers.jade
+    include partials/courses.jade
+    //include partials/map.jade
+    include partials/about.jade
+    
+    //- include partials/testimonials.jade
+    include partials/projects.jade
+    include partials/partners.jade
+    include partials/contacts.jade
+
+    include ../pages/partials/body-scripts.jade

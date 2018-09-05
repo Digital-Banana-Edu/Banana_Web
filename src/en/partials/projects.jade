@@ -1,0 +1,46 @@
+-
+  var projectList = [
+    {
+      name: "Digital Jungle",
+      pic: "../assets/img/jungle-preview.jpg",
+      url: "http://digitaljungle.ru",
+      desc_1: "Digital jungle is an educational and entertaining IT event. It was held in 2016/2017 in St. Petersburg and in 2017 in Moscow.",
+      desc_2: "Representatives of more than 40 IT companies: Avito, Microsoft, Intel, ABBYY, Eset, Kaspersky, Playrix, CROC, ASUS and others gathered at one site to tell schoolchildren, students and their parents how to choose a future profession, where to get higher and additional education, what are the industry's prospects in the next 5-10 years. The event, in total, was attended by more than 2500 people.",
+      linkText: "Project website"
+    },
+    {
+      name: "Digital Literacy Lecture Hall",
+      pic: "../assets/img/lections-preview.jpg",
+      url: "https://vk.com/digital_banana?w=wall-54916180_863",
+      desc_1: "The Digital Literacy Lecture Hall is a discussion and information club for schoolchildren and their parents, where we touch on different topics dedicated to modern specialties and education.",
+      desc_2: "Open speeches of various specialists, where they could share their knowledge, experience, interesting facts and discoveries in the field of technology. The goal is to popularize technical sciences and digital creativity among young people.",
+      linkText: "All videos"
+    },
+    {
+      name: "Video-course BamBam Games",
+      pic: "../assets/img/bambam-preview.png",
+      url: "https://www.youtube.com/channel/UC58UhbOVnYXD9C2MeI2ASbQ/videos",
+      desc_1: "If you have not yet tried to create games, but really want to - catch the BamBamGames video course, and in just a couple of days, learn how to create a cool platform game with several levels and dangers!",
+      desc_2: "Under the link below 10 videos in 10-20 minutes, which consistently tells how to create the process of creating your game project and fill the game world in small details so that players will remember them.",
+      linkText: "All videos"
+    }
+  ]
+
+mixin project-list(project)
+  li.project
+    .project-pic
+      img(src=project.pic)
+    .project-info
+      .project-title= project.name
+      .project-desc= project.desc_1
+      .project-desc= project.desc_2
+      a.ui-btn(target="_blank" href=project.url)= project.linkText
+
+section.section-projects#projects
+  .container
+    .content
+      .content-header
+        h2 Projects
+      ul.project-list
+        for project in projectList
+          +project-list(project)

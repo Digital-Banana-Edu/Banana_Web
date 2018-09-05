@@ -112,9 +112,9 @@
 
   &-teacher-top,
   &-teacher-bottom {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    //display: flex;
+    //justify-content: center;
+    //align-items: flex-start;
   }
 
   &-teacher-top,
@@ -200,7 +200,7 @@
   }
 
   @media screen and (max-width: 374px) {
-    width: 290px;
+    width: 300px;
   }
 
   &:before {
@@ -208,7 +208,7 @@
     display: block;
     content: 'Следующий преподаватель';
 
-    bottom: 0px;
+    bottom: 0;
     left: 50%;
     transform: translateX(-50%);
     color: #565656;

@@ -1,0 +1,49 @@
+-
+  var partnerList = [
+    {
+      img: "https://research.jetbrains.org/static/img/logo/jetbrains.svg",
+      url: "https://research.jetbrains.org/ru/"
+    },
+    {
+      img: "/assets/img/logo-vk.png",
+      url: "https://vk.com/team"
+    },
+    {
+      img: "/assets/img/logo-wargaming.png",
+      url: "https://ru.wargaming.net"
+    },
+    {
+      img: "/assets/img/logo-hh.png",
+      url: "https://spb.hh.ru"
+    },
+    {
+      img: "/assets/img/logo-woomy.png",
+      url: "http://hellowoomy.ru"
+    },
+    {
+      img: "/assets/img/logo-izhard.png",
+      url: "https://vk.com/izhard"
+    },
+    {
+      img: "/assets/img/logo-zillion.png",
+      url: "http://zillionwhales.com"
+    },
+    {
+      img: "/assets/img/logo-algotica.png",
+      url: "http://store.steampowered.com/app/593330/Algotica__Iteration_1/"
+    }
+  ]
+
+mixin partner(partner)
+  - var firstClass = (partner.img == "https://research.jetbrains.org/static/img/logo/jetbrains.svg") ? "research": ""
+  a.partner(href=partner.url class=firstClass target="_blank")
+    img(src=partner.img)
+
+section.section-partners#partners
+  .container
+    .content
+      .content-header
+        h2 Partners
+      .partners
+        for partner in partnerList
+          +partner(partner)

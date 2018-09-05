@@ -26,6 +26,7 @@ var config = {
   styles: './src/styles/**/*.scss',
   scripts: './src/scripts/**/*',
   pages: './src/pages/*.jade',
+  enPages: './src/en/*.jade',
   blog: './src/pages/blog/*.jade',
   templates: './src/templates/*.jade',
   images: './src/images/**/*',
@@ -34,7 +35,7 @@ var config = {
 };
 
 gulp.task('default', ['build', 'watch', 'connect']);
-gulp.task('build', ['styles', 'pages', 'blog', 'scripts', 'templates', 'images', 'fonts', 'sprite']);
+gulp.task('build', ['styles', 'pages', 'enPages', 'blog', 'scripts', 'templates', 'images', 'fonts', 'sprite']);
 
 gulp.task('connect', function() {
  connect.server({
@@ -66,6 +67,13 @@ gulp.task('pages', function() {
     .pipe(jade())
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest('build'))
+});
+
+gulp.task('enPages', function() {
+  return gulp.src(config.enPages)
+    .pipe(jade())
+    .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(gulp.dest('build/en'))
 });
 
 gulp.task('blog', function() {
@@ -185,6 +193,7 @@ gulp.task('watch', function() {
   gulp.watch(config.styles,    ['styles']);
   gulp.watch(config.scripts,   ['scripts']);
   gulp.watch('./src/pages/**',     ['pages']);
+  gulp.watch('./src/en/**',     ['enPages']);
   gulp.watch('./src/pages/blog/**',     ['blog']);
   gulp.watch(config.templates, ['templates']);
   gulp.watch(config.images,    ['images']);
