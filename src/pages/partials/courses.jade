@@ -1,8 +1,9 @@
 section.section-courses#courses
   .container
-    .content.mb-30
+    .content
       .content-header
         h2 Курсы
+    .content.mb-30
       .content-left
         ul.filter-list
           li.is-active.ga_filter_code
@@ -10,27 +11,7 @@ section.section-courses#courses
             .filter-list-info
               .filter-list-info-title Факультет IT
               .filter-list-info-age 14-16 лет
-          li.ga_filter_games
-            .filter-list-pic.games
-            .filter-list-info
-              .filter-list-info-title Факультет GameDev
-              .filter-list-info-age 14-16 лет
-          li.ga_filter_kids
-            .filter-list-pic.kids
-            .filter-list-info
-              .filter-list-info-title Кружковые занятия
-              .filter-list-info-age 10-13 лет
-          li.ga_filter_olymp
-            .filter-list-pic.olymp
-            .filter-list-info.-single-title
-              .filter-list-info-title Подготовка к олимпиадам
-          li.ga_filter_random
-            .filter-list-pic.random
-            .filter-list-info.-single-title
-              .filter-list-info-title Лето
-        
       .content-right
-
         ul.course-list.course-list1.is-active
           li
             a.course(target="_blank" href="/data-science").ga_web
@@ -40,7 +21,7 @@ section.section-courses#courses
                 .course-info-desc Исследование данных, искусственный интеллект, математика
                 .course-info-time
                   .course-info-time-content
-                    span  Старт в сентябре 2018
+                    span  Старт в октябре 2018
 
                 .course-info-btn Подробнее
               .course-pic-container
@@ -53,7 +34,7 @@ section.section-courses#courses
                 .course-info-desc Создание сайтов от основ до работы с популярными фреймворками
                 .course-info-time
                   .course-info-time-content
-                    span  Старт в сентябре 2018
+                    span  Старт в октябре 2018
 
                 .course-info-btn Подробнее
               .course-pic-container
@@ -66,7 +47,7 @@ section.section-courses#courses
                 .course-info-desc Разработка мобильных приложений от прототипа до Google Play
                 .course-info-time
                   .course-info-time-content
-                    span  Старт в сентябре 2018
+                    span  Старт в октябре 2018
 
                 .course-info-btn Подробнее
               .course-pic-container
@@ -79,12 +60,12 @@ section.section-courses#courses
                 .course-info-desc Разработка серверной части web-приложений
                 .course-info-time
                   .course-info-time-content
-                    span  Старт в сентябре 2018
+                    span  Старт в октябре 2018
 
                 .course-info-btn Подробнее
               .course-pic-container
                 img(src="/assets/img/teachers/teacher-back.jpg")
-          li
+          li#gamedev
             a.course(target="_blank" href="/design").ga_web
               .course-animation
               .course-info
@@ -92,14 +73,24 @@ section.section-courses#courses
                 .course-info-desc Обучение основам дизайна и концепта
                 .course-info-time
                   .course-info-time-content
-                    span  Старт в сентябре 2018
+                    span  Старт в октябре 2018
 
                 .course-info-btn Подробнее
               .course-pic-container
-                img(src="/assets/img/default-avatar.png")
+                img(src="/assets/img/teachers/teacher-design.jpg")
 
-                  
-        ul.course-list.course-list2
+       //     GAMES !!!!
+
+    .content.mb-30
+      .content-left
+        ul.filter-list
+          li.ga_filter_games
+            .filter-list-pic.games
+            .filter-list-info
+              .filter-list-info-title Факультет GameDev
+              .filter-list-info-age 14-16 лет
+      .content-right
+        ul.course-list.course-list2.is-active
           li
             a.course(target="_blank" href="/gamecoding").ga_web
               .course-animation
@@ -108,7 +99,7 @@ section.section-courses#courses
                 .course-info-desc Программирование компьютерных игр на языке C#
                 .course-info-time
                   .course-info-time-content
-                  span Старт в сентябре 2018
+                  span Старт в октябре 2018
 
                 .course-info-btn Подробнее
               .course-pic-container
@@ -122,7 +113,7 @@ section.section-courses#courses
                 .course-info-desc Цифровая живопись, создание игровых концептов
                 .course-info-time
                   .course-info-time-content
-                    span  Старт в сентябре 2018
+                    span  Старт в октябре 2018
                   //  span  по набору группы
                   //.course-info-time-content
                   //  span  2 учебных года
@@ -138,14 +129,24 @@ section.section-courses#courses
                 .course-info-desc Создание игровых уровней и 3D моделирование
                 .course-info-time
                   .course-info-time-content
-                    span  Старт в сентябре 2018
+                    span  Старт в октябре 2018
 
                 .course-info-btn Подробнее
               .course-pic-container
                 img(src="/assets/img/teachers/teacher-level.jpg")
-          
-          
-        ul.course-list.course-list3
+
+    //     KIDS !!!!
+
+    .content.mb-30
+      .content-left
+        ul.filter-list
+          li.ga_filter_kids
+            .filter-list-pic.kids
+            .filter-list-info
+              .filter-list-info-title Кружковые занятия
+              .filter-list-info-age 10-13 лет
+      .content-right
+        ul.course-list.course-list3.is-active
 
           li
             a.course(target="_blank" href="/game-development").ga_web
@@ -155,8 +156,8 @@ section.section-courses#courses
                 .course-info-desc Игровая разработка в Construct 2, Unity 3D и Blender
                 .course-info-time
                   .course-info-time-content
-                    span Старт в сентябре 2018
-                  
+                    span Старт в октябре 2018
+
                 .course-info-btn Подробнее
               .course-pic-container
                 img(src="/assets/img/teachers/teacher-game-basics-1.jpg")
@@ -168,7 +169,7 @@ section.section-courses#courses
                 .course-info-desc Изучение основ программирования, принципов ООП и алгоритмов на языке С#
                 .course-info-time
                   .course-info-time-content
-                    span Старт в сентябре 2018
+                    span Старт в октябре 2018
 
                 .course-info-btn Подробнее
               .course-pic-container
@@ -182,13 +183,24 @@ section.section-courses#courses
                 .course-info-desc От первых технических слов до защиты своего проекта
                 .course-info-time
                   .course-info-time-content
-                    span Старт в сентябре 2018
+                    span Старт в октябре 2018
 
                 .course-info-btn Подробнее
               .course-pic-container
                 img(src="/assets/img/teachers/teacher-english.jpg")
 
-        ul.course-list.course-list4
+
+    //     OLYMPIAD !!!!
+
+    .content.mb-30
+      .content-left
+        ul.filter-list
+          li.ga_filter_olymp
+            .filter-list-pic.olymp
+            .filter-list-info.-single-title
+              .filter-list-info-title Подготовка к олимпиадам
+      .content-right
+        ul.course-list.course-list4.is-active
           li
             a.course(target="_blank" href="/olympiad_programming").ga_web
               .course-animation
@@ -197,7 +209,7 @@ section.section-courses#courses
                 .course-info-desc Олимиадное программирование на языке C++
                 .course-info-time
                   .course-info-time-content
-                    span Старт в сентябре 2018
+                    span Старт в октябре 2018
 
                 .course-info-btn Подробнее
               .course-pic-container
@@ -211,13 +223,25 @@ section.section-courses#courses
                 .course-info-desc Подготовка к решению олимпиадных задач по математике
                 .course-info-time
                   .course-info-time-content
-                    span Старт в сентябре 2018
+                    span Старт в октябре 2018
 
                 .course-info-btn Подробнее
               .course-pic-container
                 img(src="/assets/img/teachers/teacher-math.jpg")
 
-        ul.course-list.course-list5
+
+    //    SUMMER!!!!!!!
+
+    .content.mb-30
+      .content-left
+        ul.filter-list
+          li.ga_filter_random.-is-active
+            .filter-list-pic.random
+            .filter-list-info.-single-title
+              .filter-list-info-title Лето
+        
+      .content-right
+        ul.course-list.course-list5.is-active
           li
             a.course(target="_blank" href="/leto").ga_web
               .course-animation
@@ -234,6 +258,7 @@ section.section-courses#courses
                 .course-info-btn Подробнее
               .course-pic-container
                 img(src="/assets/img/preview-leto-main.jpg")
+
 
     .ui-btn.form-btn__person.js-formBtn.ga_sign_mobile(style="margin-bottom: 30px") Подать заявку
 

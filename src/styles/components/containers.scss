@@ -8,11 +8,15 @@ body {
   position: relative;
 }
 
-.hero-first .banana-keeper:before {
-  @include icon(main_banana);
-  position: absolute;
-  top: -60%;
-  z-index: -1;
+.hero-first {
+  height: 100vh;
+
+  .banana-keeper:before {
+    @include icon(main_banana);
+    position: absolute;
+    top: -60%;
+    z-index: -1;
+  }
 }
 
 .content,
@@ -22,6 +26,10 @@ body {
   &.mb-30 {
     @media screen and (min-width: 768px) {
       margin-bottom: 30px;
+    }
+
+    @media screen and (min-width: 560px) {
+      margin-bottom: 30px !important;
     }
   }
 }

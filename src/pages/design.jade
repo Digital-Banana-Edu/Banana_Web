@@ -1,54 +1,58 @@
 extends ./templates/course-layout.jade
 
 block title
-    title Дизайн
+  title Дизайн
 
 block meta-content
-    meta(property="og:title" content="Дизайн")
-    meta(property="og:image" content="assets/img/share_img.png")
-    meta(property="og:url" content= "http://digital-banana.ru/2dgames")
-    meta(name="yandex-verification" content="e0a4b2c7ceaacc9f")
+  meta(property="og:title" content="Дизайн")
+  meta(property="og:image" content="assets/img/share_img.png")
+  meta(property="og:url" content= "http://digital-banana.ru/2dgames")
+  meta(name="yandex-verification" content="e0a4b2c7ceaacc9f")
 
 block form-dropdown
-    h4.form-title Курс
-    input.hidden(value="design" placeholder="Курс")
-    .course-name_placeholder Дизайн
+  h4.form-title Курс
+  input.hidden(value="design" placeholder="Курс")
+  .course-name_placeholder Дизайн
 
 block form-age
-    ul.age-picker
-        li 13*
-        li 14
-        li 15
+  ul.age-picker
+    li 13*
+    li 14
+    li 15
 
 block teacher
-    .teacher-photo
-        img(src="assets/img/default-avatar.png")
-    //.about-title Информация появится позже
-    //.about-desc Full-stack разработчик (в настоящее время разарботка своей web-платформы), выпускница мат-меха СПбГУ, студентка Computer Science Center, в прошлом Front-End разработчик.
+  .teacher-photo
+    img(src="assets/img/teachers/teacher-design.jpg")
+  .about-title Надежда Воскресенская
+  .about-desc
+    | Дизайнер, основатель агентства&nbsp;
+    a(href='http://denkstudio.com/') Denk|studio
 
 block course
-    h1 Дизайн
-    h2 Разработка интерфейсов / Концепты / Дизайн
+  h1 Дизайн
+  h2 Разработка интерфейсов / Концепты / Дизайн
 
-    .about-desc Подробная информация появится в скором времени
-    //a.ui-btn.-primary.-programm(href="/programs/oop_program.jpg" target="_blank") Посмотреть программу
+  .about-desc UX/UI дизайнер — специалист, который занимается проектированием пользовательских интерфейсов. Дизайнер принимает участие во всех стадиях разработки: от концептуального до физического проектирования.
+  .about-desc Курс поможет получить базовые знания в теории веб дизайна и овладеть принципами проектирования пользовательского взаимодействия. За полгода ребята изучат законы проектирования взаимодействия с пользователем при разработке интерфейса сервисов различного уровня сложности. Погрузятся в прототипирование и создание Wireframe-ов. Теоретическая часть включает понимание и применение законов типографики при работе над макетами экранов интерфейса. Практическая часть будет вестись в программе Figma, которая является облачным веб-сервисом, позволяющий разрабатывать веб-сайты и мобильные приложения.
+  .about-desc Все эти навыки помогут при определении будущей профессии, раскрытию творческого потенциала и освоению дизайн-мышления.
+  //a.ui-btn.-primary.-programm(href="/programs/oop_program.jpg" target="_blank") Посмотреть программу
 
 block price
-    .about-desc.-less-margin Стоимость в месяц
-    .about-title 6 000 рублей
+  .about-desc.-less-margin Стоимость в месяц
+  .about-title 6 000 рублей
 
 block details
-    .about-desc Умение пользоваться компьютером
-    .about-title
-        | Возраст:
-        span 14-15 лет
-    .about-title
-        | Старт курса:
-        span сентябрь 2018
-    .about-title
-        | Длительность:
-        span 1 год
-    .about-title
-        | Расписание:
-        span.date ср
-        span 18:00 - 20:45
+  .about-desc Умение пользоваться компьютером
+  .about-title
+    | Возраст:
+    span 14-15 лет
+  .about-title
+    | Старт курса:
+    span октябрь 2018
+  .about-title
+    | Длительность:
+    span 1 год
+  .about-title
+    | Расписание:
+    span.date ср
+    span 18:00 - 20:45

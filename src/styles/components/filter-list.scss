@@ -1,10 +1,14 @@
 .filter-list {
-  margin-bottom: 15px;
+
 
   li {
-    margin: 0 0 5px;
+    margin: 0;
     height: 60px;
-    cursor: pointer;
+    cursor: default;
+
+    .filter-list-pic:before {
+      background: $yellow !important;
+    }
 
     @include bp(450) {
       display: inline-block;

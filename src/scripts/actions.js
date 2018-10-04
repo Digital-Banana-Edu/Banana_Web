@@ -213,16 +213,16 @@ $(document).ready(function() {
 
   // ====================== FILTER LIST ===========================
 
-  $('.filter-list li').click(function() {
-    var num = $(this).index();
-    $('.filter-list li').removeClass('is-active');
-    $(this).addClass('is-active');
-
-    $('.course-list').removeClass('is-active');
-
-    $('.course-list:eq(' + num + ')').addClass('is-active');
-
-  });
+  // $('.filter-list li').click(function() {
+  //   var num = $(this).index();
+  //   $('.filter-list li').removeClass('is-active');
+  //   $(this).addClass('is-active');
+  //
+  //   $('.course-list').removeClass('is-active');
+  //
+  //   $('.course-list:eq(' + num + ')').addClass('is-active');
+  //
+  // });
 
   $('a').click(function() {
     if ($(this).attr('href') == '/#courses') {
@@ -237,17 +237,17 @@ $(document).ready(function() {
     }
   });
 
-  $('.hero-main_about_link_it').click(function() {
-    $('.filter-list li:eq(0)').click();
-  });
-
+  // $('.hero-main_about_link_it').click(function() {
+  //   $('.filter-list li:eq(0)').click();
+  // });
+  //
   $('.hero-main_about_link_gamedev').click(function() {
     $('.filter-list li:eq(1)').click();
   });
-
-  $('.hero-main_about_link_small').click(function() {
-    $('.filter-list li:eq(2)').click();
-  });
+  //
+  // $('.hero-main_about_link_small').click(function() {
+  //   $('.filter-list li:eq(2)').click();
+  // });
   
 
   // ========================= SLIDER ===========================

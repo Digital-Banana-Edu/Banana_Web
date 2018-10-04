@@ -7,6 +7,7 @@
 
   &.is-active {
     display: block;
+    margin-bottom: 30px;
   }
 
   > li {
@@ -112,7 +113,7 @@
 
     &-time {
       position: absolute;
-      bottom: 0;
+      bottom: -2px;
       font-size: 12px;
       line-height: 15px;
 

@@ -3,6 +3,8 @@ section.section-courses#courses
     .content.mb-30
       .content-header
         h2 Courses
+
+    .content.mb-30
       .content-left
         ul.filter-list
           li.is-active.ga_filter_it
@@ -10,21 +12,6 @@ section.section-courses#courses
             .filter-list-info
               .filter-list-info-title IT Development
               .filter-list-info-age age 14-16
-          li.ga_filter_games
-            .filter-list-pic.games
-            .filter-list-info
-              .filter-list-info-title Game Development
-              .filter-list-info-age age 14-16
-          li.ga_filter_kids
-            .filter-list-pic.kids
-            .filter-list-info
-              .filter-list-info-title Extracurriculars
-              .filter-list-info-age age 10-13
-          li.ga_filter_summer
-            .filter-list-pic.random
-            .filter-list-info.-single-title
-              .filter-list-info-title Summer
-        
       .content-right
         ul.course-list.course-list1.is-active
           li
@@ -91,10 +78,18 @@ section.section-courses#courses
 
                 .course-info-btn Info soon
               .course-pic-container
-                img(src="/assets/img/default-avatar.png")
+                img(src="/assets/img/teachers/teacher-design.jpg")
 
-                  
-        ul.course-list.course-list2
+    .content.mb-30
+      .content-left
+        ul.filter-list
+          li.ga_filter_games
+            .filter-list-pic.games
+            .filter-list-info
+              .filter-list-info-title Game Development
+              .filter-list-info-age age 14-16
+      .content-right
+        ul.course-list.course-list2.is-active
           li
             a.course(target="_blank" href="/en/programm/gamedev_old.pdf").ga_gamedev_old
               .course-animation
@@ -135,9 +130,17 @@ section.section-courses#courses
                 .course-info-btn Programm
               .course-pic-container
                 img(src="/assets/img/teachers/teacher-level.jpg")
-          
-          
-        ul.course-list.course-list3
+
+    .content.mb-30
+      .content-left
+        ul.filter-list
+          li.ga_filter_kids
+            .filter-list-pic.kids
+            .filter-list-info
+              .filter-list-info-title Extracurriculars
+              .filter-list-info-age age 10-13
+      .content-right
+        ul.course-list.course-list3.is-active
 
           li.-cursor-default
             a.course.ga_gamedev_small
@@ -148,7 +151,7 @@ section.section-courses#courses
                 .course-info-time
                   .course-info-time-content
                     span Start September 2018
-                  
+
                 .course-info-btn Info soon
               .course-pic-container
                 img(src="/assets/img/teachers/teacher-game-basics-1.jpg")
@@ -195,21 +198,15 @@ section.section-courses#courses
               .course-pic-container
                 img(src="/assets/img/teachers/teacher-olymp-2.jpg")
 
-          //li
-          //  a.course(target="_blank" href="/en/programm/olymp_math.pdf").ga_olymp_math
-          //    .course-animation
-          //    .course-info
-          //      .course-info-title Olympiad math
-          //      .course-info-desc Preparing for olympiad math tasks
-          //      .course-info-time
-          //        .course-info-time-content
-          //          span Start September 2018
-          //
-          //      .course-info-btn Programm
-          //    .course-pic-container
-          //      img(src="/assets/img/default-avatar.png")
-
-        ul.course-list.course-list4
+    .content.mb-30
+      .content-left
+        ul.filter-list
+          li.ga_filter_summer
+            .filter-list-pic.random
+            .filter-list-info.-single-title
+              .filter-list-info-title Summer
+      .content-right
+        ul.course-list.course-list4.is-active
           li
             a.course(target="_blank" href="https://www.youtube.com/watch?v=t9vdtV3CeTo").ga_leto
               .course-animation
