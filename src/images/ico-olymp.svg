@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>ico-code</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ico-code">
+            <path d="M22.108,2.688 C15.308,-1.238 6.614,1.092 2.688,7.892 C-1.238,14.693 1.091,23.388 7.891,27.313 C14.691,31.238 23.386,28.91 27.312,22.109 C31.238,15.31 28.909,6.613 22.108,2.688 Z" id="Shape" fill="#414042" fill-rule="nonzero"></path>
+            <path d="M12.5,21.5 L18.5,21.5" id="Line-Copy" stroke="#FFFFFF" stroke-linecap="square"></path>
+            <path d="M15.5,8.5 L15.5,21.5" id="Line-3" stroke="#FFFFFF" stroke-linecap="square"></path>
+            <path d="M11.5,12.5 L15.5,8.5" id="Path" stroke="#FFFFFF" stroke-linecap="square"></path>
+            <circle id="Oval" stroke="#FFFFFF" cx="15" cy="15" r="12"></circle>
+        </g>
+    </g>
+</svg>
