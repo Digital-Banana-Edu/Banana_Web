@@ -8,22 +8,30 @@
         br
         | на курс
     .wrapper-left.wrapper-left_form
-      h4.form-title Телефон для связи
-      input.isrequired.input(type="text" placeholder="phone")
-      h4.form-title Контактная почта
-      input.isrequired.input(type="text" placeholder="mail")
-      h4.form-title Промокод
-      input.isrequired.input(type="text" placeholder="promo")
-      h4.form-title Возраст ребенка
-      input.isrequired.hidden.age-input.isrequired(type="text" placeholder="age")
+      fieldset.fieldset
+        h4.form-title Телефон для связи
+        input.isrequired.input(type="text" placeholder="phone")
+      fieldset.fieldset
+        h4.form-title Контактная почта
+        input.isrequired.input(type="text" placeholder="mail")
+      fieldset.fieldset.js-promocode
+        h4.form-title Промокод
+        input.isrequired.input(type="text" placeholder="promo")
+        .fieldset__error
+          span Такой промокод не существует или уже был использован. Попробуйте еще раз
+      fieldset.fieldset
+        h4.form-title Возраст ребенка
+        input.isrequired.hidden.age-input.isrequired(type="text" placeholder="age")
       block form-age
 
     .wrapper-right.wrapper-right_form
       block form-dropdown
-      h4.form-title Фио ребенка
-      input.isrequired.input.input__parent(type="text" placeholder="kidName")
-      h4.form-title Фио родителя
-      input.isrequired.input(type="text" placeholder="parentName")
+      fieldset.fieldset
+        h4.form-title Фио ребенка
+        input.isrequired.input.input__parent(type="text" placeholder="kidName")
+      fieldset.fieldset
+        h4.form-title Фио родителя
+        input.isrequired.input(type="text" placeholder="parentName")
       .terms
         .desc Я соглашаюсь на обработку моих персональных данных
           .checkbox

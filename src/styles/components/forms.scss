@@ -389,6 +389,32 @@ input[type="checkbox"].hidden {
   }
 }
 
+.fieldset {
+  $this: &;
+  position: relative;
+
+  &__error {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 93px;
+    background-color: red;
+    color: white;
+    padding: 0;
+    z-index: 9;
+    height: 0;
+    transition: .2s;
+    overflow: hidden;
+  }
+
+  &.-show-error {
+    .fieldset__error {
+      height: auto;
+      padding: 5px;
+    }
+  }
+}
+
 
 @media screen and (max-width: 768px) {
   .feedBackWrapper,

@@ -1,300 +1,341 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
-  var termsApproved = false;
-  
-  // ====================== FORM CONTROLS ===========================
+    var termsApproved = false;
 
-  $('.js-formBtn').click(function() {
-    $('.feedBackWrapper.form-person').toggleClass('is-closed');
-  });
+    // ====================== FORM CONTROLS ===========================
 
-  $('.js-freeBtn').click(function() {
-    if ($(this).attr('course')) {
-      var courseInput = $('.feedBackWrapperFree.form-person #fastcourse');
-      var courseValue = $(this).attr('course');
-      courseInput.attr('value', courseValue);
-      console.log(courseInput.attr('value'));
-    } else {
-      console.log('this is the form on main');
-    }
-    $('.feedBackWrapperFree.form-person').toggleClass('is-closed');
-  });
+    $('.js-formBtn').click(function () {
+        $('.feedBackWrapper.form-person').toggleClass('is-closed');
+    });
 
-  $('.form-exit').click(function() {
-    $('.feedBackWrapper.form-person').toggleClass('is-closed');
-  });
+    $('.js-freeBtn').click(function () {
+        if ($(this).attr('course')) {
+            var courseInput = $('.feedBackWrapperFree.form-person #fastcourse');
+            var courseValue = $(this).attr('course');
+            courseInput.attr('value', courseValue);
+            console.log(courseInput.attr('value'));
+        } else {
+            console.log('this is the form on main');
+        }
+        $('.feedBackWrapperFree.form-person').toggleClass('is-closed');
+    });
 
-  $('.form-exit-free').click(function() {
-    $('.feedBackWrapperFree.form-person').toggleClass('is-closed');
-  });
+    $('.form-exit').click(function () {
+        $('.feedBackWrapper.form-person').toggleClass('is-closed');
+    });
 
-  $('.form-btn.form-btn__maillist').click(function() {
-    $('form.form-maillist').toggleClass('is-closed');
-  });
+    $('.form-exit-free').click(function () {
+        $('.feedBackWrapperFree.form-person').toggleClass('is-closed');
+    });
 
-  $('.gallery-flexslider').click(function() {
-    $(this).toggleClass('is-active');
-  });
+    $('.form-btn.form-btn__maillist').click(function () {
+        $('form.form-maillist').toggleClass('is-closed');
+    });
 
-  $('.js-schedule').click(function() {
-    $('.schedule').removeClass('is-closed');
-  });
+    $('.gallery-flexslider').click(function () {
+        $(this).toggleClass('is-active');
+    });
 
-  $('.schedule-exit').click(function() {
-    $('.schedule').addClass('is-closed');
-  });
+    $('.js-schedule').click(function () {
+        $('.schedule').removeClass('is-closed');
+    });
+
+    $('.schedule-exit').click(function () {
+        $('.schedule').addClass('is-closed');
+    });
 
 
-  // ====================== DROPDOWN ===========================
+    // ====================== DROPDOWN ===========================
 
-  $('.dropdown-toggle').click(function() {
-    var dropdown = $(this).parent();
-    if (dropdown.hasClass('is-closed')) {
-      dropdown.removeClass('is-closed').addClass('is-opened');
-    } else {
-      dropdown.removeClass('is-opened').addClass('is-closed');
-    }
-  });
+    $('.dropdown-toggle').click(function () {
+        var dropdown = $(this).parent();
+        if (dropdown.hasClass('is-closed')) {
+            dropdown.removeClass('is-closed').addClass('is-opened');
+        } else {
+            dropdown.removeClass('is-opened').addClass('is-closed');
+        }
+    });
 
-  $('.dropdown-menu li').click(function() {
-    var pickedText = $(this).text();
-    $('.dropdown-toggle').text(pickedText);
-    $('.dropdown-input').val(pickedText);
-    $('.dropdown').removeClass('is-opened').addClass('is-closed');
-  });
+    $('.dropdown-menu li').click(function () {
+        var pickedText = $(this).text();
+        $('.dropdown-toggle').text(pickedText);
+        $('.dropdown-input').val(pickedText);
+        $('.dropdown').removeClass('is-opened').addClass('is-closed');
+    });
 
-  $('.header-nav_toggler').click(function () {
-    $('.header-nav').toggleClass('open');
-  });
+    $('.header-nav_toggler').click(function () {
+        $('.header-nav').toggleClass('open');
+    });
 
-  // ====================== AGE PICKER ===========================
+    // ====================== AGE PICKER ===========================
 
-  $('.age-picker li').click(function() {
-    $('.age-picker li').removeClass('picked');
-    $(this).addClass('picked');
-    $('.age-input').val($(this).text());
-  });
+    $('.age-picker li').click(function () {
+        $('.age-picker li').removeClass('picked');
+        $(this).addClass('picked');
+        $('.age-input').val($(this).text());
+    });
 
-  $('.checkbox').click(function() {
-    if (!termsApproved) {
-      termsApproved = true;
-      $('.check').prop('checked', true);
-      $('.checkbox').addClass('clicked');
-    } else {
-      termsApproved = false;
-      $('.check').prop('checked', false);
-      $('.checkbox').removeClass('clicked');
+    $('.checkbox').click(function () {
+        if (!termsApproved) {
+            termsApproved = true;
+            $('.check').prop('checked', true);
+            $('.checkbox').addClass('clicked');
+        } else {
+            termsApproved = false;
+            $('.check').prop('checked', false);
+            $('.checkbox').removeClass('clicked');
+        }
+
+    });
+
+    // ====================== FORM SEND ===========================
+
+    $(document.body).on("click", ".ajaxgo", send);
+
+    $(document.body).on("focus", "input", function () {
+        $(this).css("border", "");
+    });
+
+    $('body').on('focus', '.js-promocode', function () {
+        $('.js-promocode').removeClass('-show-error');
+    });
+
+
+    function send() {
+        if (termsApproved) {
+
+            if (promocodeFilled()) {
+                var code = $('.js-promocode input').val();
+                console.log(code);
+                if (checkPromocode(code)) {
+                    // sendMainFormRequest();
+                } else {
+                    $('.js-promocode').addClass('-show-error');
+                }
+            } else
+                sendMainFormRequest();
+        } else {
+            console.log('No Terms, No Bananas!');
+        }
     }
     
-  });
+    function checkPromocode(code) {
+        $.getJSON('http://176.53.162.171:3000/verify_code',
+            {promocode: code}).then(function (value) {
+                console.log(value);
+        })
+    }
 
-  // ====================== FORM SEND ===========================
+    function promocodeFilled() {
+        var promocode = $('.js-promocode input').val();
 
-  $(document.body).on("click", ".ajaxgo", send);
-   
-  $(document.body).on("focus", "input", function(){$(this).css("border","");});
-   
+        return promocode !== null ? true : null;
+    }
 
-
-  function send(){
-    if (termsApproved) {
-      var wr = $(this).parents(".feedBackWrapper");
-      var validate = true;
-      wr.find(".isrequired").each(function(){
-          if(!$(this).val().length){validate = false; $(this).addClass("border-bottom","1px solid #D22")}
-      });
-      if (validate){
-        var need = {};
-        need['header'] = "Контактная информация";
-        need['fields'] = [];
-        wr.find("input, select, textarea").each(function(){
-          var fieldElement = {};
-          //Checkbox, Radio
-          //Ожидаемая семантика: <input type="checkbox" placeholder="Цвет" title="Синий"> / <input type="radio" name="radio1" placeholder="Вкус" title="Сладкий">
-          if($(this).attr('type') == 'checkbox' || $(this).attr('type') == 'radio'){
-            if($(this).prop('checked') == true){
-              fieldElement['type'] = $(this).attr("type");
-              fieldElement['title'] = $(this).attr("placeholder");
-              fieldElement['value'] = $(this).attr("title");
-              need['fields'][need['fields'].length] = fieldElement;
+    function sendMainFormRequest() {
+        var wr = $(this).parents(".feedBackWrapper");
+        var validate = true;
+        wr.find(".isrequired").each(function () {
+            if (!$(this).val().length) {
+                validate = false;
+                $(this).addClass("border-bottom", "1px solid #D22")
             }
-            return true;
-          }
-          fieldElement['type'] = $(this).attr("type") || 'text';
-          fieldElement['title'] = $(this).attr("placeholder");
-          fieldElement['value'] = $(this).val();
-          need['fields'][need['fields'].length] = fieldElement;
         });
-        output = JSON.stringify(need);
-        $.ajax({
-          type: "POST",
-          data: {data1: output},
-          url:'/mail.php',
-          dataType:'json',
-          success: function(data){
-            wr.addClass('is-closed');
-            $(".successmsg").addClass('is-visible');
-            wr.find("input, select, textarea").val('');
-            wr.find(".picked").removeClass('picked');
-            setTimeout(function() {$(".successmsg").removeClass('is-visible')}, 5000);
-          },
-          error: function (xhr, ajaxOptions, thrownError){
-            console.log(xhr.responseText);
-          }
-        });
-      }
-    } else {
-      console.log('No Terms, No Bananas!');
+        if (validate) {
+            var need = {};
+            need['header'] = "Контактная информация";
+            need['fields'] = [];
+            wr.find("input, select, textarea").each(function () {
+                var fieldElement = {};
+                //Checkbox, Radio
+                //Ожидаемая семантика: <input type="checkbox" placeholder="Цвет" title="Синий"> / <input type="radio" name="radio1" placeholder="Вкус" title="Сладкий">
+                if ($(this).attr('type') == 'checkbox' || $(this).attr('type') == 'radio') {
+                    if ($(this).prop('checked') == true) {
+                        fieldElement['type'] = $(this).attr("type");
+                        fieldElement['title'] = $(this).attr("placeholder");
+                        fieldElement['value'] = $(this).attr("title");
+                        need['fields'][need['fields'].length] = fieldElement;
+                    }
+                    return true;
+                }
+                fieldElement['type'] = $(this).attr("type") || 'text';
+                fieldElement['title'] = $(this).attr("placeholder");
+                fieldElement['value'] = $(this).val();
+                need['fields'][need['fields'].length] = fieldElement;
+            });
+            output = JSON.stringify(need);
+            $.ajax({
+                type: "POST",
+                data: {data1: output},
+                url: '/mail.php',
+                dataType: 'json',
+                success: function (data) {
+                    wr.addClass('is-closed');
+                    $(".successmsg").addClass('is-visible');
+                    wr.find("input, select, textarea").val('');
+                    wr.find(".picked").removeClass('picked');
+                    setTimeout(function () {
+                        $(".successmsg").removeClass('is-visible')
+                    }, 5000);
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    console.log(xhr.responseText);
+                }
+            });
+        }
     }
-  }
 
-  // +++++++++++++++++++++++ AHAHAHA +++++++++++++++++++++++++++++
+    // +++++++++++++++++++++++ AHAHAHA +++++++++++++++++++++++++++++
 
-  $(document.body).on("click", ".ajaxgofree", sendFree);
-   
-  $(document.body).on("focus", "input", function(){$(this).css("border","");});
-   
+    $(document.body).on("click", ".ajaxgofree", sendFree);
+
+    $(document.body).on("focus", "input", function () {
+        $(this).css("border", "");
+    });
 
 
-  function sendFree(){
-    if (termsApproved) {
-      var wr = $(this).parents(".feedBackWrapperFree");
-      var validate = true;
-      wr.find(".isrequired").each(function(){
-          if(!$(this).val().length){validate = false; $(this).addClass("border-bottom","1px solid #D22")}
-      });
-      if (validate){
-        var need = {};
-        need['header'] = "Это мелкая форма - если нет темы - это запрос с главной";
-        need['fields'] = [];
-        wr.find("input, select, textarea").each(function(){
-          var fieldElement = {};
-          //Checkbox, Radio
-          //Ожидаемая семантика: <input type="checkbox" placeholder="Цвет" title="Синий"> / <input type="radio" name="radio1" placeholder="Вкус" title="Сладкий">
-          if($(this).attr('type') == 'checkbox' || $(this).attr('type') == 'radio'){
-            if($(this).prop('checked') == true){
-              fieldElement['type'] = $(this).attr("type");
-              fieldElement['title'] = $(this).attr("placeholder");
-              fieldElement['value'] = $(this).attr("title");
-              need['fields'][need['fields'].length] = fieldElement;
+    function sendFree() {
+        if (termsApproved) {
+            var wr = $(this).parents(".feedBackWrapperFree");
+            var validate = true;
+            wr.find(".isrequired").each(function () {
+                if (!$(this).val().length) {
+                    validate = false;
+                    $(this).addClass("border-bottom", "1px solid #D22")
+                }
+            });
+            if (validate) {
+                var need = {};
+                need['header'] = "Это мелкая форма - если нет темы - это запрос с главной";
+                need['fields'] = [];
+                wr.find("input, select, textarea").each(function () {
+                    var fieldElement = {};
+                    //Checkbox, Radio
+                    //Ожидаемая семантика: <input type="checkbox" placeholder="Цвет" title="Синий"> / <input type="radio" name="radio1" placeholder="Вкус" title="Сладкий">
+                    if ($(this).attr('type') == 'checkbox' || $(this).attr('type') == 'radio') {
+                        if ($(this).prop('checked') == true) {
+                            fieldElement['type'] = $(this).attr("type");
+                            fieldElement['title'] = $(this).attr("placeholder");
+                            fieldElement['value'] = $(this).attr("title");
+                            need['fields'][need['fields'].length] = fieldElement;
+                        }
+                        return true;
+                    }
+                    fieldElement['type'] = $(this).attr("type") || 'text';
+                    fieldElement['title'] = $(this).attr("placeholder");
+                    fieldElement['value'] = $(this).val();
+                    need['fields'][need['fields'].length] = fieldElement;
+                });
+                output = JSON.stringify(need);
+                $.ajax({
+                    type: "POST",
+                    data: {data1: output},
+                    url: '/mail.php',
+                    dataType: 'json',
+                    success: function (data) {
+                        wr.addClass('is-closed');
+                        $(".successmsg").addClass('is-visible');
+                        wr.find("input, select, textarea").val('');
+                        wr.find(".picked").removeClass('picked');
+                        setTimeout(function () {
+                            $(".successmsg").removeClass('is-visible')
+                        }, 5000);
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        console.log(xhr.responseText);
+                    }
+                });
             }
-            return true;
-          }
-          fieldElement['type'] = $(this).attr("type") || 'text';
-          fieldElement['title'] = $(this).attr("placeholder");
-          fieldElement['value'] = $(this).val();
-          need['fields'][need['fields'].length] = fieldElement;
-        });
-        output = JSON.stringify(need);
-        $.ajax({
-          type: "POST",
-          data: {data1: output},
-          url:'/mail.php',
-          dataType:'json',
-          success: function(data){
-            wr.addClass('is-closed');
-            $(".successmsg").addClass('is-visible');
-            wr.find("input, select, textarea").val('');
-            wr.find(".picked").removeClass('picked');
-            setTimeout(function() {$(".successmsg").removeClass('is-visible')}, 5000);
-          },
-          error: function (xhr, ajaxOptions, thrownError){
-            console.log(xhr.responseText);
-          }
-        });
-      }
-    } else {
-      console.log('No Terms, No Bananas!');
+        } else {
+            console.log('No Terms, No Bananas!');
+        }
     }
-  }
 
 
+    // ====================== FILTER LIST ===========================
+
+    // $('.filter-list li').click(function() {
+    //   var num = $(this).index();
+    //   $('.filter-list li').removeClass('is-active');
+    //   $(this).addClass('is-active');
+    //
+    //   $('.course-list').removeClass('is-active');
+    //
+    //   $('.course-list:eq(' + num + ')').addClass('is-active');
+    //
+    // });
+
+    $('a').click(function () {
+        if ($(this).attr('href') == '/#courses') {
+            console.log('to courses');
+        } else if ($(this).attr('href').match(/#/) == "#") {
+            event.preventDefault();
+
+            var id = $(this).attr('href');
+            var top = $(id).offset().top;
+
+            $('body, html').animate({scrollTop: top}, 1000);
+        }
+    });
+
+    // $('.hero-main_about_link_it').click(function() {
+    //   $('.filter-list li:eq(0)').click();
+    // });
+    //
+    $('.hero-main_about_link_gamedev').click(function () {
+        $('.filter-list li:eq(1)').click();
+    });
+    //
+    // $('.hero-main_about_link_small').click(function() {
+    //   $('.filter-list li:eq(2)').click();
+    // });
 
 
-  // ====================== FILTER LIST ===========================
+    // ========================= SLIDER ===========================
 
-  // $('.filter-list li').click(function() {
-  //   var num = $(this).index();
-  //   $('.filter-list li').removeClass('is-active');
-  //   $(this).addClass('is-active');
-  //
-  //   $('.course-list').removeClass('is-active');
-  //
-  //   $('.course-list:eq(' + num + ')').addClass('is-active');
-  //
-  // });
+    $('.about-photos').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.about-photos-nav'
+    });
 
-  $('a').click(function() {
-    if ($(this).attr('href') == '/#courses') {
-      console.log('to courses');
-    } else if ($(this).attr('href').match(/#/) == "#") {
-      event.preventDefault();
+    $('.about-photos-nav').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        asNavFor: '.about-photos',
+        dots: false,
+        centerMode: true,
+        focusOnSelect: true,
+        centerPadding: '10px',
+        adaptiveHeight: true,
+        arrows: false
+    });
 
-      var id = $(this).attr('href');
-      var top = $(id).offset().top;
+    $('.testimonals-slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: true
+    });
 
-      $('body, html').animate({scrollTop: top}, 1000);
-    }
-  });
+    setTimeout(function () {
+        if (window.location.href.match('&utm_term=courses') != null) {
+            if (window.location.href.match('&utm_term=courses').length > 0) {
+                $('html,body').animate({
+                    scrollTop: $("#courses").offset().top
+                });
+            }
+        }
+    }, 1500);
 
-  // $('.hero-main_about_link_it').click(function() {
-  //   $('.filter-list li:eq(0)').click();
-  // });
-  //
-  $('.hero-main_about_link_gamedev').click(function() {
-    $('.filter-list li:eq(1)').click();
-  });
-  //
-  // $('.hero-main_about_link_small').click(function() {
-  //   $('.filter-list li:eq(2)').click();
-  // });
-  
-
-  // ========================= SLIDER ===========================
-
-  $('.about-photos').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    fade: true,
-    asNavFor: '.about-photos-nav'
-  });
-
-  $('.about-photos-nav').slick({
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    asNavFor: '.about-photos',
-    dots: false,
-    centerMode: true,
-    focusOnSelect: true,
-    centerPadding: '10px',
-    adaptiveHeight: true,
-    arrows: false
-  });
-
-  $('.testimonals-slider').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    dots: true
-  });
-
-  setTimeout(function () {
-    if (window.location.href.match('&utm_term=courses') != null) {
-      if (window.location.href.match('&utm_term=courses').length > 0) {
-        $('html,body').animate({
-           scrollTop: $("#courses").offset().top
+    if ($('.teacher-slider')) {
+        $('.teacher-slider').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            fade: true
         });
-      }
     }
-  }, 1500);
-
-  if ($('.teacher-slider')) {
-      $('.teacher-slider').slick({
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          fade: true
-      });
-  }
 
 });
