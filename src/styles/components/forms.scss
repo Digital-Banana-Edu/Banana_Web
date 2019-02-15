@@ -213,6 +213,12 @@ input.hidden {
       background-color: white;
     }
   }
+
+  &.-alert {
+    li {
+      color: red;
+    }
+  }
 }
 
 #person-btn {
@@ -344,6 +350,10 @@ input.hidden {
   .desc {
     line-height: 20px;
     display: block;
+
+    &.-alert {
+      color: red;
+    }
   }
 
   a {
@@ -396,10 +406,9 @@ input[type="checkbox"].hidden {
   &__error {
     position: absolute;
     left: 0;
-    right: 0;
-    top: 93px;
-    background-color: red;
-    color: white;
+    top: 57px;
+    color: red;
+    font-size: 12px;
     padding: 0;
     z-index: 9;
     height: 0;
@@ -411,6 +420,10 @@ input[type="checkbox"].hidden {
     .fieldset__error {
       height: auto;
       padding: 5px;
+    }
+
+    input {
+      border-color: red;
     }
   }
 }
@@ -453,5 +466,11 @@ input[type="checkbox"].hidden {
 
   .terms {
     max-width: 230px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .js-promocode .fieldset__error {
+    top: 44px;
   }
 }

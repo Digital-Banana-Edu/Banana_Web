@@ -10,17 +10,21 @@
     .wrapper-left.wrapper-left_form
       fieldset.fieldset
         h4.form-title Телефон для связи
-        input.isrequired.input(type="text" placeholder="phone")
+        input.isrequired.input.val-phone(type="text" placeholder="phone")
+        .fieldset__error
+          span Заполните телефон
       fieldset.fieldset
         h4.form-title Контактная почта
-        input.isrequired.input(type="text" placeholder="mail")
+        input.isrequired.input.val-mail(type="text" placeholder="mail")
+        .fieldset__error
+          span Заполните почту
       fieldset.fieldset.js-promocode
         h4.form-title Промокод
-        input.isrequired.input(type="text" placeholder="promo")
+        input.isrequired.input.val-promo(type="text" placeholder="promo")
         .fieldset__error
           span Такой промокод не существует или уже был использован. Попробуйте еще раз
       fieldset.fieldset
-        h4.form-title Возраст ребенка
+        h4.form-title.-age Возраст ребенка
         input.isrequired.hidden.age-input.isrequired(type="text" placeholder="age")
       block form-age
 
@@ -28,14 +32,18 @@
       block form-dropdown
       fieldset.fieldset
         h4.form-title Фио ребенка
-        input.isrequired.input.input__parent(type="text" placeholder="kidName")
+        input.isrequired.input.input__parent.val-child(type="text" placeholder="kidName")
+        .fieldset__error
+          span Заполните имя ученика
       fieldset.fieldset
         h4.form-title Фио родителя
-        input.isrequired.input(type="text" placeholder="parentName")
+        input.isrequired.input.val-parent(type="text" placeholder="parentName")
+        .fieldset__error
+          span Заполните имя родителя
       .terms
         .desc Я соглашаюсь на обработку моих персональных данных
           .checkbox
-        input.isrequired.hidden.check(type="checkbox")
+            input.isrequired.hidden.check(type="checkbox")
         br
         a(href="/license.pdf" target="_blank") Политика конфеденциальности Digital Banana
       .ajaxgo Отправить форму

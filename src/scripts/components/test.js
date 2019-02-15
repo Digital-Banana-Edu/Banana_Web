@@ -408,3 +408,16 @@ content.on('click', '.js-restartPage', function () {
     setVariablesAndInteractions();
     currentPositive = 'start';
 });
+
+var rows = [
+    [
+        {
+            pic: 'klsdjfkldskfljkdslflsdf',
+            colorClass: '-yellow',
+            sizeClass: 'col-md-6'
+        }
+    ],
+    [
+
+    ]
+]

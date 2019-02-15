@@ -26,93 +26,6 @@ html
         .main-logo
         a.bananatag(target="_blank" href="https://www.instagram.com/digital_banana/").ga_bananatag #DIGITALBANANA
         include ./partials/socials.jade
-        .feedBackWrapperFree.form-person.is-closed.container
-          .form-exit-free
-          .content
-            .wrapper-right.wrapper-right_form
-              h2
-                | Бесплатный
-                br
-                | урок
-              
-            .wrapper-right.wrapper-right_form
-              h4.form-title Ваш телефон
-              input.isrequired.input(type="text" placeholder="phone")
-              h4.form-title Ваша почта
-              input.isrequired.input(type="text" placeholder="mail")
-              h4.form-title Ваше имя
-              input.isrequired.input(type="text" placeholder="parentName")
-              .terms
-                .desc Я соглашаюсь на обработку моих персональных данных
-                  .checkbox
-                input.isrequired.hidden.check(type="checkbox")
-                br
-                a(href="/license.pdf" target="_blank") Политика конфеденциальности Digital Banana
-              .ajaxgofree Отправить форму
-
-        .feedBackWrapper.form-person.is-closed.container
-          .form-exit
-          .content
-            .wrapper-left.wrapper-left_form
-            .wrapper-right.wrapper-right_form
-              h2
-                | Заявка
-                br
-                | на курс
-            .wrapper-left.wrapper-left_form
-              h4.form-title Телефон для связи
-              input.isrequired.input(type="text" placeholder="phone")
-              h4.form-title Контактная почта
-              input.isrequired.input(type="text" placeholder="mail")
-              h4.form-title Промокод
-              input.isrequired.input(type="text" placeholder="promo")
-              h4.form-title Возраст ребенка
-              input.isrequired.hidden.age-input.isrequired(type="text" placeholder="age")
-              ul.age-picker
-                li 11
-                li 12
-                li 13
-                li 14
-                li 15
-                li 16
-                li 17
-
-            .wrapper-right.wrapper-right_form
-              h4.form-title Выберите курс
-              .dropdown.is-closed
-                input.isrequired.dropdown-input.hidden(type="text" placeholder="курс вашей мечты")
-                .dropdown-toggle
-                ul.dropdown-menu.is-hidden
-                  li Разработка сайтов
-                  li Серверная разработка
-                  li Мобильная разработка
-                  li Машинное обучение
-                  li Дизайн
-                  li Игровая разработка 14-17
-                  li Дизайн игровых уровней
-                  li Концепт-арт
-                  li Основы ООП
-                  li Олимпиадное программирование
-                  li Олимпиадная математика
-                  li Игровая разработка 11-13
-
-              h4.form-title Фио ребенка
-              input.isrequired.input.input__parent(type="text" placeholder="kidName")
-              h4.form-title Фио родителя
-              input.isrequired.input(type="text" placeholder="parentName")
-              .terms
-                .desc Я соглашаюсь на обработку моих персональных данных
-                  .checkbox
-                input.isrequired.hidden.check(type="checkbox")
-                br
-                a(href="/license.pdf" target="_blank") Политика конфеденциальности Digital Banana
-              .ajaxgo Отправить форму
-
-        .successmsg
-          .successmsg-title Ваша заявка принята!
-          .successmsg-desc В ближайшее время мы свяжемся с вами!
-          img(src="./assets/img/roll.png")
-
         .content
           .content-header.banana-keeper
             h1
@@ -137,15 +50,15 @@ html
 
             a.main-btn(target="_blank" href="/test") Профориентационный тест
             div
-              a.main-btn.mr-2(target="_blank" href="https://docs.google.com/spreadsheets/d/1Kz1dRIFiIWgmvrp9NyT5lwZl5E8tSwXwSVtbX2g5cSM/edit?usp=sharing") Расписание
-              a.main-btn(href="https://bananaschool.timepad.ru/events/" target="_blank") Открытые уроки
+              a.main-btn(href="http://leto.digital-banana.ru" target="_blank") Летняя программа
+              //a.main-btn.mr-2(target="_blank" href="https://docs.google.com/spreadsheets/d/1Kz1dRIFiIWgmvrp9NyT5lwZl5E8tSwXwSVtbX2g5cSM/edit?usp=sharing") Расписание
+              //a.main-btn(href="https://bananaschool.timepad.ru/events/" target="_blank") Открытые уроки
 
 
 
           a(href="#courses").bottom-link Узнайте больше
     include partials/courses.jade
     include partials/about.jade
-    //include partials/testimonials.jade
 
     include partials/projects.jade
     include partials/partners.jade

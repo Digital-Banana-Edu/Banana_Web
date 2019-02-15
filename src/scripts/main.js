@@ -7,5 +7,3 @@ var ga = require('./ga.js');
 require('./actions.js');
 require('./components/form.js');
 require('./components/test.js');
-require('./components/map.js');
-require('./components/teachers.js');
